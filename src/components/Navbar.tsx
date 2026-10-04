@@ -20,6 +20,7 @@ import { ShareStoreModal } from './ShareStoreModal';
 import { SecurityProtocolsModal } from './SecurityProtocolsModal';
 import { auth, loginWithGoogle, logoutUser } from '../firebase';
 import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
+import navbarLogoImg from '../assets/images/shahzein_navbar_logo.png';
 
 export const Navbar: React.FC = () => {
   const {
@@ -172,7 +173,7 @@ export const Navbar: React.FC = () => {
 
       {/* Main Navigation Bar */}
       <header className="sticky top-0 z-40 bg-[#0c0b0a]/95 backdrop-blur-md border-b border-[#221e1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
           {/* Mobile menu trigger */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
@@ -191,8 +192,8 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Brand Logo & Name */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+          {/* Brand Logo - Official 3D Royal Gold Emblem */}
+          <div className="flex items-center">
             <a
               href="#"
               onClick={(e) => {
@@ -200,21 +201,14 @@ export const Navbar: React.FC = () => {
                 setActiveView('store');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="group flex items-center gap-3.5 text-left"
+              className="group flex items-center transition-all focus:outline-none py-1"
+              title="SHAHZEIN•A Parfumerie — Be Remembered Differently"
             >
-              <div className="w-11 h-11 rounded-lg overflow-hidden border border-[#c5a059]/60 shadow-md shadow-[#c5a059]/15 bg-[#12100e] flex-shrink-0 group-hover:border-[#dfb967] transition-all p-1 flex items-center justify-center">
-                <img src="/favicon.svg" alt="Shahzein.A Official Logo" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-[0.2em] text-[#f5f0e8] group-hover:text-[#c5a059] transition-colors leading-tight">
-                  SHAHZEIN.A
-                </span>
-                <div className="flex items-center gap-2 text-[9px] tracking-[0.24em] font-cinzel text-[#c5a059] mt-0.5 uppercase">
-                  <span>PARFUMERIE</span>
-                  <span className="text-[#5e4f35] font-light">•</span>
-                  <span className="text-[#a5957d] tracking-[0.14em] text-[8px] font-sans">BE REMEMBERED DIFFERENTLY</span>
-                </div>
-              </div>
+              <img
+                src={navbarLogoImg}
+                alt="SHAHZEIN•A Parfumerie - Be Remembered Differently"
+                className="h-14 sm:h-16 md:h-18 w-auto max-w-[210px] sm:max-w-[250px] md:max-w-[280px] object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] filter"
+              />
             </a>
           </div>
 

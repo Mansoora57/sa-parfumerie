@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStore } from '../context/StoreContext';
 import { ShieldCheck, Globe, Sliders, Sparkles, MapPin, Phone, Mail } from 'lucide-react';
+import navbarLogoImg from '../assets/images/shahzein_navbar_logo.png';
 
 export const Footer: React.FC = () => {
   const { setIsFinderOpen, setIsDomainModalOpen, setActiveView } = useStore();
@@ -12,18 +13,12 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Maison Identity */}
           <div className="md:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-lg border border-[#c5a059]/40 bg-[#14110d] p-1 flex items-center justify-center flex-shrink-0">
-                <img src="/favicon.svg" alt="Shahzein.A Crest" className="w-full h-full object-contain" />
-              </div>
-              <div>
-                <span className="font-cinzel text-xl font-bold tracking-[0.2em] text-[#f5f0e8]">
-                  SHAHZEIN.A
-                </span>
-                <div className="text-[10px] tracking-[0.2em] font-cinzel uppercase text-[#c5a059] mt-0.5">
-                  PARFUMERIE • BE REMEMBERED DIFFERENTLY
-                </div>
-              </div>
+            <div className="flex items-center">
+              <img
+                src={navbarLogoImg}
+                alt="SHAHZEIN•A Parfumerie - Be Remembered Differently"
+                className="h-16 md:h-18 w-auto max-w-[240px] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] filter"
+              />
             </div>
 
             <p className="text-xs text-[#a09280] leading-relaxed max-w-sm">
