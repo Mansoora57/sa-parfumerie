@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 380" fill="none">
+  <defs>
+    <!-- 24K Multi-Stop Metallic Gold Gradients with Bevel & Sheen -->
+    <linearGradient id="goldStopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faecc1" />
+      <stop offset="20%" stop-color="#eac875" />
+      <stop offset="45%" stop-color="#fff8e7" />
+      <stop offset="70%" stop-color="#c59b43" />
+      <stop offset="90%" stop-color="#936d23" />
+      <stop offset="100%" stop-color="#644810" />
+    </linearGradient>
+
+    <linearGradient id="goldHighlight" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#fffdf7" />
+      <stop offset="40%" stop-color="#f5dc99" />
+      <stop offset="75%" stop-color="#d4aa4d" />
+      <stop offset="100%" stop-color="#8a631c" />
+    </linearGradient>
+
+    <linearGradient id="goldShadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b08636" />
+      <stop offset="60%" stop-color="#664913" />
+      <stop offset="100%" stop-color="#3c2a08" />
+    </linearGradient>
+
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.9" />
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#fde68a" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- ======================================================== -->
+  <!-- SHAHZEIN.A OFFICIAL GEOMETRIC SA PERFUME FLACON EMBLEM   -->
+  <!-- Traced directly from official design                     -->
+  <!-- ======================================================== -->
+  <g filter="url(#goldGlow)" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- 1. DIAMOND / FACETED JEWEL STOPPER (CAP) -->
+    <!-- Top flat ridge -->
+    <polygon points="128,38 192,38 226,64 160,102 94,64" fill="url(#goldHighlight)" stroke="#fdf5dc" stroke-width="1.5" />
+    <!-- Stopper Internal Facet Planes for 3D Beveled Reflection -->
+    <polygon points="128,38 192,38 160,64" fill="#faecc1" opacity="0.95" />
+    <polygon points="128,38 94,64 160,64" fill="url(#goldStopGrad)" />
+    <polygon points="192,38 226,64 160,64" fill="url(#goldShadow)" />
+    <polygon points="94,64 160,102 160,64" fill="url(#goldHighlight)" />
+    <polygon points="226,64 160,102 160,64" fill="url(#goldShadow)" />
+    <line x1="160" y1="38" x2="160" y2="102" stroke="#ffffff" stroke-width="1.8" stroke-opacity="0.9" />
+    
+    <!-- 2. NECK & COLLARS -->
+    <!-- Upper Collar Bar -->
+    <rect x="122" y="106" width="76" height="7" rx="1.5" fill="url(#goldHighlight)" stroke="#faecc1" stroke-width="0.5" />
+    <!-- Neck Stem (2 vertical golden pillars) -->
+    <rect x="136" y="113" width="10" height="24" fill="url(#goldHighlight)" />
+    <rect x="174" y="113" width="10" height="24" fill="url(#goldShadow)" />
+    <!-- Lower Collar Bar (Flacon Shoulder Ridge) -->
+    <rect x="116" y="137" width="88" height="8" rx="2" fill="url(#goldHighlight)" stroke="#faecc1" stroke-width="0.5" />
+
+    <!-- 3. RIGHT FLACON SHOULDER & RIGHT WALL -->
+    <!-- Horizontal right shoulder from collar, angled 45-deg shoulder, and straight vertical wall -->
+    <path d="M 188 141 L 210 141 L 238 174 L 238 322" 
+          fill="none" stroke="url(#goldHighlight)" stroke-width="7" stroke-linejoin="miter" stroke-miterlimit="4" />
+    
+    <!-- Bottom horizontal base bar under right wall & A leg -->
+    <path d="M 152 322 L 238 322" 
+          fill="none" stroke="url(#goldHighlight)" stroke-width="7" stroke-linecap="square" />
+
+    <!-- 4. ARCHITECTURAL LETTER 'A' -->
+    <!-- Apex starts right beneath the neck collar at (160, 145) -->
+    <!-- Right leg of 'A' (slanted architectural pillar to base) -->
+    <path d="M 160 145 L 234 322" 
+          fill="none" stroke="url(#goldHighlight)" stroke-width="11" stroke-linecap="square" />
+
+    <!-- Left leg of 'A' (slanted left down to 104, 308) -->
+    <path d="M 160 145 L 102 312" 
+          fill="none" stroke="url(#goldHighlight)" stroke-width="9" stroke-linecap="square" />
+
+    <!-- Horizontal crossbar of 'A' -->
+    <path d="M 124 238 L 202 238" 
+          fill="none" stroke="url(#goldHighlight)" stroke-width="8" stroke-linecap="square" />
+
+    <!-- 5. ELEGANT INTERLOCKING LETTER 'S' -->
+    <!-- Curved top terminal, looping across left flacon shoulder and weaving through A -->
+    <!-- Top left curve forming left bottle shoulder -->
+    <path d="M 148 145 C 114 140 82 160 82 196 C 82 232 120 238 144 250 C 172 264 178 284 172 306 C 164 328 134 336 104 332 C 78 328 66 312 66 288" 
+          fill="none" stroke="url(#goldHighlight)" stroke-width="11" stroke-linecap="round" />
+
+    <!-- Inner 3D Light Accent Stroke on S -->
+    <path d="M 144 147 C 116 142 86 162 86 196 C 86 230 122 236 146 248 C 170 262 174 280 168 302" 
+          fill="none" stroke="#fff8e7" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+  </g>
+</svg>

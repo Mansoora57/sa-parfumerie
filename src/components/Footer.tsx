@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStore } from '../context/StoreContext';
 import { ShieldCheck, Globe, Sliders, Sparkles, MapPin, Phone, Mail } from 'lucide-react';
-import navbarLogoImg from '../assets/images/shahzein_navbar_logo.png';
+import { ShahzeinBrandLogo } from './ShahzeinBrandLogo';
 
 export const Footer: React.FC = () => {
   const { setIsFinderOpen, setIsDomainModalOpen, setActiveView } = useStore();
@@ -14,11 +14,7 @@ export const Footer: React.FC = () => {
           {/* Maison Identity */}
           <div className="md:col-span-4 space-y-4">
             <div className="flex items-center">
-              <img
-                src={navbarLogoImg}
-                alt="SHAHZEIN•A Parfumerie - Be Remembered Differently"
-                className="h-16 md:h-18 w-auto max-w-[240px] object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] filter"
-              />
+              <ShahzeinBrandLogo size="lg" />
             </div>
 
             <p className="text-xs text-[#a09280] leading-relaxed max-w-sm">

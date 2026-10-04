@@ -20,7 +20,7 @@ import { ShareStoreModal } from './ShareStoreModal';
 import { SecurityProtocolsModal } from './SecurityProtocolsModal';
 import { auth, loginWithGoogle, logoutUser } from '../firebase';
 import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
-import navbarLogoImg from '../assets/images/shahzein_navbar_logo.png';
+import { ShahzeinBrandLogo } from './ShahzeinBrandLogo';
 
 export const Navbar: React.FC = () => {
   const {
@@ -173,7 +173,7 @@ export const Navbar: React.FC = () => {
 
       {/* Main Navigation Bar */}
       <header className="sticky top-0 z-40 bg-[#0c0b0a]/95 backdrop-blur-md border-b border-[#221e1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-22 sm:h-24 flex items-center justify-between">
           {/* Mobile menu trigger */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
@@ -192,7 +192,7 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Brand Logo - Official 3D Royal Gold Emblem */}
+          {/* Brand Logo - Authentic Geometric SA Flacon Emblem & Prominent Typography */}
           <div className="flex items-center">
             <a
               href="#"
@@ -204,11 +204,7 @@ export const Navbar: React.FC = () => {
               className="group flex items-center transition-all focus:outline-none py-1"
               title="SHAHZEIN•A Parfumerie — Be Remembered Differently"
             >
-              <img
-                src={navbarLogoImg}
-                alt="SHAHZEIN•A Parfumerie - Be Remembered Differently"
-                className="h-14 sm:h-16 md:h-18 w-auto max-w-[210px] sm:max-w-[250px] md:max-w-[280px] object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] filter"
-              />
+              <ShahzeinBrandLogo size="md" />
             </a>
           </div>
 
