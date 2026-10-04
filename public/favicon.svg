@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Deep obsidian radial background -->
+    <radialGradient id="bgFav" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#1d1914" />
+      <stop offset="65%" stop-color="#0d0b09" />
+      <stop offset="100%" stop-color="#040303" />
+    </radialGradient>
+
+    <!-- Luxury 24k Beveled Gold Gradient -->
+    <linearGradient id="goldFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faecc1" />
+      <stop offset="25%" stop-color="#dfb967" />
+      <stop offset="50%" stop-color="#fff1cf" />
+      <stop offset="75%" stop-color="#b88d3b" />
+      <stop offset="100%" stop-color="#7a5518" />
+    </linearGradient>
+
+    <!-- Warm soft ambient glow -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Luxury rounded squircle container -->
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bgFav)" stroke="url(#goldFav)" stroke-width="3" />
+  <rect x="9" y="9" width="110" height="110" rx="21" fill="none" stroke="url(#goldFav)" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="3 2" />
+
+  <!-- Perfume Bottle Silhouette with Diamond Stopper & SA Monogram -->
+  <g filter="url(#softGlow)" fill="none" stroke="url(#goldFav)" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- 1. Diamond / Faceted Octagonal Stopper Cap -->
+    <polygon points="64,12 79,20 79,23 64,28 49,23 49,20" fill="url(#goldFav)" stroke-width="1.5" />
+    <line x1="64" y1="12" x2="64" y2="28" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.7" />
+    <line x1="49" y1="20" x2="64" y2="28" stroke="#7a5518" stroke-width="0.8" />
+    <line x1="79" y1="20" x2="64" y2="28" stroke="#7a5518" stroke-width="0.8" />
+
+    <!-- 2. Stopper Collar / Neck Rings -->
+    <rect x="56" y="29" width="16" height="3" rx="1" fill="url(#goldFav)" stroke="none" />
+    <rect x="53" y="33" width="22" height="3.5" rx="1" fill="url(#goldFav)" stroke="none" />
+
+    <!-- 3. Elegant Perfume Flacon Body Outline -->
+    <!-- Shoulders angled, body vertical, rounded bottom base -->
+    <path d="M 53 36.5 L 36 47 L 36 100 C 36 104 40 108 45 108 L 83 108 C 88 108 92 104 92 100 L 92 47 L 75 36.5" 
+          stroke-width="3.5" stroke="url(#goldFav)" />
+  </g>
+
+  <!-- 4. Central SA Monogram Inside Bottle -->
+  <g fill="url(#goldFav)">
+    <!-- Letter 'A' (Stately Roman Serif) -->
+    <!-- Left leg -->
+    <polygon points="64,44 60,44 48,96 54,96 57,84 71,84 74,96 80,96 68,44" fill="url(#goldFav)" />
+    <!-- Inner cutout of A -->
+    <polygon points="64,55 59,77 69,77" fill="#0d0b09" />
+    
+    <!-- Letter 'S' (Sweeping Baroque Serif curving across A) -->
+    <path d="M 50 56 C 45 54 40 56 36 60 C 32 64 33 71 39 74 C 47 78 57 80 58 87 C 59 93 52 98 44 98 C 37 98 32 94 30 88 L 37 86 C 38 90 41 93 45 93 C 48 93 52 91 52 86 C 52 81 44 77 37 73 C 30 69 27 63 29 55 C 31 47 38 43 47 43 C 54 43 58 46 61 50 Z" 
+          fill="url(#goldFav)" filter="url(#softGlow)" />
+  </g>
+
+  <!-- Sparkling highlight star on diamond stopper -->
+  <polygon points="64,9 65.5,12 68.5,12 66,13.5 67,16.5 64,14.5 61,16.5 62,13.5 59.5,12 62.5,12" fill="#fffbe8" />
+</svg>

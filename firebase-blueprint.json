@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "Customer and store administration profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["customer", "admin"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "order": {
+      "title": "Order",
+      "description": "Haute Parfumerie bespoke fragrance client orders",
+      "type": "object",
+      "properties": {
+        "orderId": { "type": "string" },
+        "userId": { "type": "string" },
+        "customerName": { "type": "string", "maxLength": 100 },
+        "phone": { "type": "string", "maxLength": 30 },
+        "city": { "type": "string", "maxLength": 50 },
+        "address": { "type": "string", "maxLength": 200 },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "shipped", "delivered"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["orderId", "customerName", "phone", "totalAmount", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "User profile records"
+    },
+    "/orders/{orderId}": {
+      "schema": "order",
+      "description": "Customer placed orders"
+    }
+  }
+}

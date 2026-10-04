@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480" width="700" height="480">
+  <defs>
+    <!-- Luxury 24k Beveled Gold Gradient for Text & Bottle -->
+    <linearGradient id="goldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faecc1" />
+      <stop offset="25%" stop-color="#dfb967" />
+      <stop offset="50%" stop-color="#fff5dc" />
+      <stop offset="75%" stop-color="#b88d3b" />
+      <stop offset="100%" stop-color="#7a5518" />
+    </linearGradient>
+
+    <linearGradient id="goldBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b88d3b" />
+      <stop offset="50%" stop-color="#fdf2d5" />
+      <stop offset="100%" stop-color="#b88d3b" />
+    </linearGradient>
+
+    <!-- Subtle luxury 3D drop shadow -->
+    <filter id="luxuryShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.8" />
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#faecc1" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- ========================================== -->
+  <!-- 1. PERFUME BOTTLE + SA MONOGRAM EMBLEM     -->
+  <!-- LIFTED UP with generous vertical clearance -->
+  <!-- Center: x=350, y spans 20 to 195           -->
+  <!-- ========================================== -->
+  <g id="emblem-group" filter="url(#luxuryShadow)">
+    
+    <!-- Diamond / Faceted Octagonal Stopper Cap -->
+    <polygon points="350,20 376,32 376,36 350,46 324,36 324,32" fill="url(#goldSheen)" stroke="#fff5dc" stroke-width="0.75" />
+    <!-- Stopper Facet Reflections -->
+    <line x1="350" y1="20" x2="350" y2="46" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.9" />
+    <line x1="324" y1="32" x2="350" y2="46" stroke="#684712" stroke-width="1" />
+    <line x1="376" y1="32" x2="350" y2="46" stroke="#684712" stroke-width="1" />
+
+    <!-- Stopper Collar Rings -->
+    <rect x="337" y="47" width="26" height="4.5" rx="1.5" fill="url(#goldSheen)" />
+    <rect x="331" y="53" width="38" height="5.5" rx="2" fill="url(#goldSheen)" />
+
+    <!-- Perfume Flacon Outline (Lifted up, ends at y=185) -->
+    <path d="M 331 58.5 L 298 78 L 298 178 C 298 184 304 188 312 188 L 388 188 C 396 188 402 184 402 178 L 402 78 L 369 58.5" 
+          fill="none" stroke="url(#goldSheen)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Central Interlocked 'SA' Monogram Inside Flacon -->
+    <!-- Letter A -->
+    <polygon points="350,70 344,70 322,172 334,172 338,152 362,152 366,172 378,172 356,70" fill="url(#goldSheen)" />
+    <polygon points="350,86 341,139 359,139" fill="#0b0a09" />
+
+    <!-- Letter S (Curving majestically across A) -->
+    <path d="M 324 93 C 314 88 304 93 298 101 C 291 109 292 121 303 127 C 317 134 336 137 337 150 C 338 161 326 170 311 170 C 298 170 289 162 286 151 L 299 148 C 301 155 306 160 312 160 C 318 160 324 156 324 148 C 324 139 310 133 298 126 C 286 119 281 108 284 95 C 287 81 300 73 317 73 C 329 73 336 78 341 84 Z" 
+          fill="url(#goldSheen)" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 2. BRAND NAME: "SHAHZEIN.A"                 -->
+  <!-- Positioned with clean breathing room (y=265)-->
+  <!-- ========================================== -->
+  <g id="brand-title" filter="url(#luxuryShadow)">
+    <text x="345" y="270" 
+          font-family="'Cinzel', 'Times New Roman', 'Baskerville', serif" 
+          font-size="64" 
+          font-weight="700" 
+          letter-spacing="5" 
+          fill="url(#goldSheen)" 
+          text-anchor="middle">SHAHZEIN.A</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 3. LINE 2: ≡  PARFUMERIE  ≡                -->
+  <!-- Positioned at y=340                        -->
+  <!-- ========================================== -->
+  <g id="parfumerie-row" filter="url(#luxuryShadow)">
+    <!-- 3 Horizontal Gold Bars (Left) -->
+    <rect x="75" y="318" width="80" height="4.5" rx="1" fill="url(#goldBarGrad)" />
+    <rect x="75" y="327" width="80" height="4.5" rx="1" fill="url(#goldBarGrad)" />
+    <rect x="75" y="336" width="80" height="4.5" rx="1" fill="url(#goldBarGrad)" />
+
+    <!-- Center Word: PARFUMERIE -->
+    <text x="350" y="338" 
+          font-family="'Cinzel', 'Times New Roman', 'Baskerville', serif" 
+          font-size="34" 
+          font-weight="600" 
+          letter-spacing="14" 
+          fill="url(#goldSheen)" 
+          text-anchor="middle">PARFUMERIE</text>
+
+    <!-- 3 Horizontal Gold Bars (Right) -->
+    <rect x="545" y="318" width="80" height="4.5" rx="1" fill="url(#goldBarGrad)" />
+    <rect x="545" y="327" width="80" height="4.5" rx="1" fill="url(#goldBarGrad)" />
+    <rect x="545" y="336" width="80" height="4.5" rx="1" fill="url(#goldBarGrad)" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 4. LINE 3: BE REMEMBERED DIFFERENTLY       -->
+  <!-- With Slogan Underline Bar                  -->
+  <!-- ========================================== -->
+  <g id="slogan-row" filter="url(#luxuryShadow)">
+    <!-- The Slogan Text -->
+    <text x="350" y="396" 
+          font-family="'Plus Jakarta Sans', 'Cinzel', 'Montserrat', sans-serif" 
+          font-size="20" 
+          font-weight="700" 
+          letter-spacing="10" 
+          fill="url(#goldSheen)" 
+          text-anchor="middle">BE REMEMBERED DIFFERENTLY</text>
+
+    <!-- Bottom Accent Underline Bar -->
+    <rect x="110" y="416" width="480" height="4" rx="2" fill="url(#goldBarGrad)" />
+    <polygon points="350,422 355,426 350,430 345,426" fill="#fff5dc" />
+  </g>
+</svg>

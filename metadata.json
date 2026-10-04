@@ -1,0 +1,7 @@
+{
+  "name": "SHAHZEIN.A PARFUMERIE",
+  "description": "Haute Parfumerie online flagship featuring personalized bespoke fragrance recommendations, secure checkout, and integrated CMS inventory management on SHAHZEIN.A PARFUMERIE.PK.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
