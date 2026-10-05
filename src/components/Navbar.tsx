@@ -24,6 +24,7 @@ export const Navbar: React.FC = () => {
     setSelectedFragrance,
     domainSettings,
     showToast,
+    isWorkingPlatform,
   } = useStore();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -93,43 +94,50 @@ export const Navbar: React.FC = () => {
               The Craft
             </a>
 
-            <button
-              onClick={() => setIsProtocolsOpen(true)}
-              className="flex items-center gap-1.5 hover:text-[#c5a059] transition-colors cursor-pointer py-2"
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Security Protocols</span>
-            </button>
+            {/* Working platform only: Security Protocols & Domain/DNS */}
+            {isWorkingPlatform && (
+              <>
+                <button
+                  onClick={() => setIsProtocolsOpen(true)}
+                  className="flex items-center gap-1.5 hover:text-[#c5a059] transition-colors cursor-pointer py-2"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Security Protocols</span>
+                </button>
 
-            <button
-              onClick={() => setIsDomainModalOpen(true)}
-              className="flex items-center gap-1.5 hover:text-[#c5a059] transition-colors cursor-pointer py-2"
-            >
-              <Globe className="w-3.5 h-3.5 text-[#a89988]" />
-              <span>Domain &amp; DNS</span>
-            </button>
+                <button
+                  onClick={() => setIsDomainModalOpen(true)}
+                  className="flex items-center gap-1.5 hover:text-[#c5a059] transition-colors cursor-pointer py-2"
+                >
+                  <Globe className="w-3.5 h-3.5 text-[#a89988]" />
+                  <span>Domain &amp; DNS</span>
+                </button>
+              </>
+            )}
           </nav>
 
           {/* Right Action Icons: CMS, Search & Cart */}
           <div className="flex items-center gap-3">
-            {/* View Mode Switcher: Storefront vs CMS Inventory */}
-            <button
-              onClick={() => setActiveView(activeView === 'store' ? 'cms' : 'store')}
-              className={`hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium transition-all rounded ${
-                activeView === 'cms'
-                  ? 'bg-[#c5a059] text-[#0b0a09] font-semibold'
-                  : 'bg-[#1b1712] text-[#e3dac9] hover:bg-[#25201a] border border-[#3d3224]'
-              }`}
-              title="Toggle CMS Inventory Dashboard"
-            >
-              <Sliders className="w-3.5 h-3.5" />
-              <span>{activeView === 'cms' ? 'Return to Store' : 'CMS'}</span>
-              {lowStockCount > 0 && activeView === 'store' && (
-                <span className="ml-1 bg-amber-500/20 text-amber-300 text-[10px] px-1.5 rounded-full border border-amber-500/30">
-                  {lowStockCount}
-                </span>
-              )}
-            </button>
+            {/* View Mode Switcher: Storefront vs CMS Inventory (Working platform only) */}
+            {isWorkingPlatform && (
+              <button
+                onClick={() => setActiveView(activeView === 'store' ? 'cms' : 'store')}
+                className={`hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium transition-all rounded ${
+                  activeView === 'cms'
+                    ? 'bg-[#c5a059] text-[#0b0a09] font-semibold'
+                    : 'bg-[#1b1712] text-[#e3dac9] hover:bg-[#25201a] border border-[#3d3224]'
+                }`}
+                title="Toggle CMS Inventory Dashboard"
+              >
+                <Sliders className="w-3.5 h-3.5" />
+                <span>{activeView === 'cms' ? 'Return to Store' : 'CMS'}</span>
+                {lowStockCount > 0 && activeView === 'store' && (
+                  <span className="ml-1 bg-amber-500/20 text-amber-300 text-[10px] px-1.5 rounded-full border border-amber-500/30">
+                    {lowStockCount}
+                  </span>
+                )}
+              </button>
+            )}
 
             <button
               onClick={() => setSearchOpen(true)}
@@ -186,38 +194,43 @@ export const Navbar: React.FC = () => {
                 <Sparkles className="w-4 h-4 text-[#c5a059]" />
               </button>
 
-              <button
-                onClick={() => {
-                  setIsProtocolsOpen(true);
-                  setMobileMenuOpen(false);
-                }}
-                className="py-2 text-left flex items-center justify-between text-emerald-400 border-b border-[#1f1b16]"
-              >
-                <span>Security &amp; Protocols Inspector</span>
-                <ShieldCheck className="w-4 h-4" />
-              </button>
+              {/* Working platform only: Security, Domain & CMS */}
+              {isWorkingPlatform && (
+                <>
+                  <button
+                    onClick={() => {
+                      setIsProtocolsOpen(true);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="py-2 text-left flex items-center justify-between text-emerald-400 border-b border-[#1f1b16]"
+                  >
+                    <span>Security &amp; Protocols Inspector</span>
+                    <ShieldCheck className="w-4 h-4" />
+                  </button>
 
-              <button
-                onClick={() => {
-                  setIsDomainModalOpen(true);
-                  setMobileMenuOpen(false);
-                }}
-                className="py-2 text-left flex items-center justify-between hover:text-[#c5a059] border-b border-[#1f1b16]"
-              >
-                <span>Hosting &amp; DNS Architecture</span>
-                <Globe className="w-4 h-4 text-[#a89988]" />
-              </button>
+                  <button
+                    onClick={() => {
+                      setIsDomainModalOpen(true);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="py-2 text-left flex items-center justify-between hover:text-[#c5a059] border-b border-[#1f1b16]"
+                  >
+                    <span>Hosting &amp; DNS Architecture</span>
+                    <Globe className="w-4 h-4 text-[#a89988]" />
+                  </button>
 
-              <button
-                onClick={() => {
-                  setActiveView(activeView === 'store' ? 'cms' : 'store');
-                  setMobileMenuOpen(false);
-                }}
-                className="py-2 text-left flex items-center justify-between text-[#c5a059]"
-              >
-                <span>{activeView === 'cms' ? 'Return to Store' : 'CMS Inventory Dashboard'}</span>
-                <Sliders className="w-4 h-4 text-[#c5a059]" />
-              </button>
+                  <button
+                    onClick={() => {
+                      setActiveView(activeView === 'store' ? 'cms' : 'store');
+                      setMobileMenuOpen(false);
+                    }}
+                    className="py-2 text-left flex items-center justify-between text-[#c5a059]"
+                  >
+                    <span>{activeView === 'cms' ? 'Return to Store' : 'CMS Inventory Dashboard'}</span>
+                    <Sliders className="w-4 h-4 text-[#c5a059]" />
+                  </button>
+                </>
+              )}
             </div>
           </div>
         )}

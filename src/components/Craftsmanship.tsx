@@ -3,7 +3,7 @@ import { ShieldCheck, Sparkles, Droplet, Gem, Award, Feather } from 'lucide-reac
 import { useStore } from '../context/StoreContext';
 
 export const Craftsmanship: React.FC = () => {
-  const { setIsFinderOpen, setIsDomainModalOpen } = useStore();
+  const { setIsFinderOpen } = useStore();
 
   return (
     <section id="bespoke-craft" className="py-20 bg-[#0e0c0a] border-t border-[#221d17]">

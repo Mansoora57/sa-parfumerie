@@ -14,14 +14,14 @@ import { AdminCMS } from './components/AdminCMS';
 import { Toast } from './components/Toast';
 
 const MainLayout: React.FC = () => {
-  const { activeView } = useStore();
+  const { activeView, isWorkingPlatform } = useStore();
 
   return (
     <div className="min-h-screen bg-[#0c0b0a] text-[#f4efe6] flex flex-col font-sans-luxury selection:bg-[#c5a059]/30 selection:text-[#f7e7ce]">
       <Navbar />
 
       <main className="flex-1">
-        {activeView === 'store' ? (
+        {activeView === 'store' || !isWorkingPlatform ? (
           <>
             <Hero />
             <CollectionsGrid />
@@ -39,7 +39,7 @@ const MainLayout: React.FC = () => {
       <FragranceFinderModal />
       <CartDrawer />
       <CheckoutModal />
-      <DomainHostingModal />
+      {isWorkingPlatform && <DomainHostingModal />}
       <Toast />
     </div>
   );

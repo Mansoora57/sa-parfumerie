@@ -45,6 +45,10 @@ interface StoreContextType {
   updateDomainSettings: (settings: Partial<DomainSettings>) => void;
   pingDomain: () => Promise<number>;
 
+  // Platform Environment (Working/Studio Platform vs Customer Side)
+  isWorkingPlatform: boolean;
+  setIsWorkingPlatform: (val: boolean) => void;
+
   // Notification Toast
   toastMessage: string | null;
   showToast: (msg: string) => void;
@@ -153,6 +157,47 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [isDomainModalOpen, setIsDomainModalOpen] = useState(false);
   const [activeView, setActiveView] = useState<'store' | 'cms'>('store');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  // Detect whether running in working platform (AI Studio Build / preview / dev) vs public customer side
+  const [isWorkingPlatform, setIsWorkingPlatformState] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    const hostname = window.location.hostname;
+    const searchParams = new URLSearchParams(window.location.search);
+
+    // URL override triggers: ?admin=true or ?working=true unlocks working platform controls
+    if (searchParams.get('admin') === 'true' || searchParams.get('cms') === 'true' || searchParams.get('working') === 'true') {
+      localStorage.setItem('shahzein_working_platform', 'true');
+      return true;
+    }
+    if (searchParams.get('customer') === 'true') {
+      localStorage.removeItem('shahzein_working_platform');
+      return false;
+    }
+
+    // Check localStorage saved preference
+    const savedPlatform = localStorage.getItem('shahzein_working_platform');
+    if (savedPlatform === 'true') return true;
+
+    // Working platform host detection (Cloud Run AI Studio preview, localhost, dev environments)
+    const isDevHost =
+      hostname === 'localhost' ||
+      hostname === '127.0.0.1' ||
+      hostname.includes('.run.app') || // AI Studio dev & shared preview URLs
+      hostname.includes('googleusercontent.com') ||
+      hostname.includes('webcontainer') ||
+      hostname.includes('stackblitz');
+
+    return isDevHost;
+  });
+
+  const setIsWorkingPlatform = (val: boolean) => {
+    setIsWorkingPlatformState(val);
+    if (val) {
+      localStorage.setItem('shahzein_working_platform', 'true');
+    } else {
+      localStorage.removeItem('shahzein_working_platform');
+    }
+  };
 
   // Sync to localStorage
   useEffect(() => {
@@ -408,6 +453,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         domainSettings,
         updateDomainSettings,
         pingDomain,
+        isWorkingPlatform,
+        setIsWorkingPlatform,
         toastMessage,
         showToast,
       }}
