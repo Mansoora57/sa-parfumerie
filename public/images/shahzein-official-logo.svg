@@ -163,11 +163,11 @@
     <rect x="328" y="318.5" width="68" height="3.5" rx="1" fill="url(#realGoldBevel)" />
     <rect x="328" y="326" width="68" height="3.5" rx="1" fill="url(#realGoldBevel)" />
 
-    <!-- "BE REMEMBERED DIFFERENTLY" FLANKED BY HORIZONTAL BARS -->
+    <!-- "BE REMEMBERED DIFFERENTLY" FLANKED BY HORIZONTAL BARS (Crisp Pure White) -->
     <!-- Left bar -->
-    <rect x="24" y="351" width="58" height="2.8" rx="0.8" fill="url(#realGoldBevel)" />
+    <rect x="24" y="351" width="58" height="2.8" rx="0.8" fill="#FFFFFF" opacity="0.95" />
 
-    <!-- Slogan text -->
+    <!-- Slogan text (Pure White) -->
     <text
       x="210"
       y="355.5"
@@ -176,10 +176,10 @@
       font-weight="600"
       font-size="11.5"
       letter-spacing="3.2"
-      fill="#dfd3c0"
+      fill="#FFFFFF"
     >BE REMEMBERED DIFFERENTLY</text>
 
     <!-- Right bar -->
-    <rect x="338" y="351" width="58" height="2.8" rx="0.8" fill="url(#realGoldBevel)" />
+    <rect x="338" y="351" width="58" height="2.8" rx="0.8" fill="#FFFFFF" opacity="0.95" />
   </g>
 </svg>
