@@ -91,85 +91,6 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Luxury Top Announcement & Domain Link Bar */}
-      <div className="bg-[#12100e] border-b border-[#2d261e] text-xs text-[#c5a059] py-2 px-4 transition-colors">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-          {/* Official Domain & Security Badge */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsDomainModalOpen(true)}
-              className="flex items-center gap-2 hover:text-[#f3efe6] transition-colors group cursor-pointer text-left"
-              title="Inspect hosting & domain settings"
-            >
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-mono tracking-wider text-[11px] text-[#e8d5b5]">
-                <strong className="text-[#f5e6c8] group-hover:underline">SHAHZEIN•A Parfumerie — Online Store</strong>
-              </span>
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-            </button>
-
-
-            <button
-              onClick={() => setIsProtocolsOpen(true)}
-              className="text-[10px] text-[#c5a059] hover:text-[#f4efe6] bg-[#1d1813] hover:bg-[#282119] border border-[#3d3224] px-2 py-0.5 rounded transition-colors inline-flex items-center gap-1 cursor-pointer"
-            >
-              <Lock className="w-3 h-3 text-emerald-400" />
-              <span>Security Protocols Verified</span>
-            </button>
-          </div>
-
-          {/* Quick Share Store Link & Working URL */}
-          <div className="flex items-center gap-2.5">
-            <button
-              onClick={async () => {
-                const url = window.location.href;
-                await safeCopyToClipboard(url);
-                showToast('Direct Store Link Copied!');
-              }}
-              className="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#1d1813] hover:bg-[#282119] border border-[#3d3224] rounded text-[11px] font-mono text-[#c5a059] transition-colors cursor-pointer"
-              title="Click to copy direct live store address"
-            >
-              <Share2 className="w-3 h-3 text-[#c5a059]" />
-              <span>Copy Direct Store Link</span>
-            </button>
-
-
-
-
-
-
-
-            <button
-              onClick={() => setIsShareOpen(true)}
-              className="flex items-center gap-1.5 px-2.5 py-1 bg-[#251f18] hover:bg-[#342c22] text-[#f4efe6] border border-[#443828] rounded text-[11px] font-medium transition-colors cursor-pointer"
-              title="Share store address with anyone"
-            >
-              <Share2 className="w-3.5 h-3.5 text-[#c5a059]" />
-              <span className="font-cinzel">Share Store</span>
-            </button>
-
-
-            {/* View Mode Switcher: Storefront vs CMS Inventory */}
-            <button
-              onClick={() => setActiveView(activeView === 'store' ? 'cms' : 'store')}
-              className={`flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium transition-all rounded ${
-                activeView === 'cms'
-                  ? 'bg-[#c5a059] text-[#0b0a09] font-semibold'
-                  : 'bg-[#1e1b17] text-[#e3dac9] hover:bg-[#2c2720] border border-[#3d3429]'
-              }`}
-            >
-              <Sliders className="w-3 h-3" />
-              <span>{activeView === 'cms' ? 'Return to Store' : 'CMS Inventory'}</span>
-              {lowStockCount > 0 && activeView === 'store' && (
-                <span className="ml-1 bg-amber-500/20 text-amber-300 text-[10px] px-1.5 rounded-full border border-amber-500/30">
-                  {lowStockCount}
-                </span>
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation Bar */}
       <header className="sticky top-0 z-40 bg-[#0c0b0a]/95 backdrop-blur-md border-b border-[#221e1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
@@ -242,6 +163,25 @@ export const Navbar: React.FC = () => {
             >
               <Share2 className="w-3.5 h-3.5" />
               <span>Share Store</span>
+            </button>
+
+            {/* View Mode Switcher: Storefront vs CMS Inventory */}
+            <button
+              onClick={() => setActiveView(activeView === 'store' ? 'cms' : 'store')}
+              className={`hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium transition-all rounded ${
+                activeView === 'cms'
+                  ? 'bg-[#c5a059] text-[#0b0a09] font-semibold'
+                  : 'bg-[#1b1712] text-[#e3dac9] hover:bg-[#25201a] border border-[#3d3224]'
+              }`}
+              title="Toggle CMS Inventory Dashboard"
+            >
+              <Sliders className="w-3.5 h-3.5" />
+              <span>{activeView === 'cms' ? 'Return to Store' : 'CMS'}</span>
+              {lowStockCount > 0 && activeView === 'store' && (
+                <span className="ml-1 bg-amber-500/20 text-amber-300 text-[10px] px-1.5 rounded-full border border-amber-500/30">
+                  {lowStockCount}
+                </span>
+              )}
             </button>
 
             <button
