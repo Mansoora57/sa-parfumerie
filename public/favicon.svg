@@ -1,126 +1,125 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
   <defs>
-    <!-- Background subtle gradient matching the user's silver-grey tone -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#c5c5c5" />
-      <stop offset="50%" stop-color="#bcbcbc" />
-      <stop offset="100%" stop-color="#b4b4b4" />
+    <!-- Background luxury onyx gradient with subtle center gold warmth -->
+    <radialGradient id="favOnyxBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e1a14" />
+      <stop offset="60%" stop-color="#0e0d0c" />
+      <stop offset="100%" stop-color="#050504" />
+    </radialGradient>
+
+    <!-- 24K Royal Gold Multi-Stop Metallic Gradients -->
+    <linearGradient id="goldMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff8e7" />
+      <stop offset="18%" stop-color="#faecc1" />
+      <stop offset="42%" stop-color="#dfb967" />
+      <stop offset="70%" stop-color="#c59b43" />
+      <stop offset="88%" stop-color="#936d23" />
+      <stop offset="100%" stop-color="#5c4010" />
     </linearGradient>
 
-    <!-- 24K Royal Gold Gradient for Diamond, Monogram, and Brand Title -->
-    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e2bf72" />
-      <stop offset="25%" stop-color="#ca9f4a" />
-      <stop offset="50%" stop-color="#fdf0c9" />
-      <stop offset="75%" stop-color="#b88d3b" />
+    <linearGradient id="goldHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#fff5dc" />
+      <stop offset="65%" stop-color="#eac875" />
+      <stop offset="100%" stop-color="#b88d3b" />
+    </linearGradient>
+
+    <linearGradient id="goldShadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#936d23" />
+      <stop offset="50%" stop-color="#5c4010" />
+      <stop offset="100%" stop-color="#2a1b04" />
+    </linearGradient>
+
+    <linearGradient id="goldHorizontal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b88d3b" />
+      <stop offset="25%" stop-color="#fff8e7" />
+      <stop offset="50%" stop-color="#dfb967" />
+      <stop offset="75%" stop-color="#fff8e7" />
       <stop offset="100%" stop-color="#8a631c" />
     </linearGradient>
 
-    <linearGradient id="goldSheen" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#fef6dc" />
-      <stop offset="35%" stop-color="#dfb65f" />
-      <stop offset="70%" stop-color="#b08432" />
-      <stop offset="100%" stop-color="#735219" />
-    </linearGradient>
-
-    <linearGradient id="facetHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#fff8e7" />
-      <stop offset="50%" stop-color="#f7e1a0" />
-      <stop offset="100%" stop-color="#d4aa4d" />
-    </linearGradient>
-
-    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.35" />
+    <!-- Luxury Gold 3D Drop Shadow & Glow -->
+    <filter id="royalGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.9" />
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#dfb967" flood-opacity="0.35" />
     </filter>
   </defs>
 
-  <!-- 1. Silver-Grey Background Canvas -->
-  <rect width="256" height="256" rx="32" fill="url(#bgGrad)" />
+  <!-- Dark Luxury Rounded Onyx Canvas for High Contrast in all Browsers -->
+  <rect width="256" height="256" rx="48" fill="url(#favOnyxBg)" />
+  <rect width="252" height="252" x="2" y="2" rx="46" fill="none" stroke="url(#goldMain)" stroke-width="1.5" stroke-opacity="0.4" />
 
-  <g id="brand-logo" filter="url(#softShadow)">
-    <!-- ======================================================== -->
-    <!-- 2. DIAMOND / JEWEL AT THE TOP (Center: x=128, y: 16 to 48) -->
-    <!-- ======================================================== -->
-    <g id="diamond-top" stroke="#684712" stroke-width="0.75" stroke-linejoin="round">
-      <!-- Table Top & Crown -->
-      <polygon points="112,18 144,18 156,28 128,48 100,28" fill="url(#goldSheen)" />
-      <!-- Facet divisions -->
-      <polygon points="112,18 144,18 128,28" fill="#fff5dc" />
-      <polygon points="112,18 100,28 128,28" fill="url(#facetHighlight)" />
-      <polygon points="144,18 156,28 128,28" fill="#a47c2c" />
-      <!-- Lower Pavilion Facets meeting at Culet (128, 48) -->
-      <polygon points="100,28 128,48 116,28" fill="url(#goldGradient)" />
-      <polygon points="116,28 128,48 128,28" fill="#fdf0c9" />
-      <polygon points="128,28 128,48 140,28" fill="#c49b43" />
-      <polygon points="140,28 128,48 156,28" fill="#88601c" />
-      <line x1="128" y1="18" x2="128" y2="48" stroke="#ffffff" stroke-width="1" stroke-opacity="0.8" />
+  <!-- ======================================================== -->
+  <!-- STANDALONE BOLD 3D ROYAL GOLD DIAMOND & SA EMBLEM        -->
+  <!-- Scaled & Centered to maximum visibility in browser tabs   -->
+  <!-- ======================================================== -->
+  <g filter="url(#royalGlow)">
+    
+    <!-- 1. DIAMOND STOPPER / JEWEL (Top: y=16 to y=64, Center: x=128) -->
+    <g id="diamond">
+      <!-- Diamond Outer Contour -->
+      <polygon points="100,20 156,20 178,35 128,64 78,35" 
+               fill="url(#goldMain)" stroke="#fff8e7" stroke-width="1.5" stroke-linejoin="round" />
+      
+      <!-- Upper Crown Facets -->
+      <polygon points="100,20 156,20 128,35" fill="url(#goldHighlight)" stroke="#5c4010" stroke-width="0.75" />
+      <polygon points="100,20 78,35 128,35" fill="url(#goldMain)" stroke="#5c4010" stroke-width="0.75" />
+      <polygon points="156,20 178,35 128,35" fill="url(#goldShadow)" stroke="#5c4010" stroke-width="0.75" />
+      
+      <!-- Lower Pavilion Facets (Meeting at Culet x=128, y=64) -->
+      <polygon points="78,35 128,64 103,35" fill="url(#goldMain)" stroke="#5c4010" stroke-width="0.75" />
+      <polygon points="103,35 128,64 128,35" fill="url(#goldHighlight)" stroke="#5c4010" stroke-width="0.75" />
+      <polygon points="128,35 128,64 153,35" fill="url(#goldMain)" stroke="#5c4010" stroke-width="0.75" />
+      <polygon points="153,35 128,64 178,35" fill="url(#goldShadow)" stroke="#5c4010" stroke-width="0.75" />
+      
+      <!-- Brilliant Center Reflection Spine -->
+      <line x1="128" y1="20" x2="128" y2="64" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-opacity="0.9" />
     </g>
 
-    <!-- Pedestal / Collar under Diamond -->
-    <rect x="119" y="49" width="18" height="3" rx="0.5" fill="url(#goldGradient)" stroke="#684712" stroke-width="0.5" />
-    <polygon points="122,52 134,52 136,56 120,56" fill="url(#goldSheen)" />
-    <rect x="116" y="56" width="24" height="3.5" rx="0.5" fill="url(#goldGradient)" stroke="#684712" stroke-width="0.5" />
-
-    <!-- ======================================================== -->
-    <!-- 3. INTERLOCKING "S A" MONOGRAM (Center: x=128, y: 58 to 142) -->
-    <!-- ======================================================== -->
-    <g id="monogram" fill="url(#goldGradient)" stroke="#5c3f10" stroke-width="0.6">
-      <!-- Letter 'A' (Stately architecture) -->
-      <!-- Left diagonal leg -->
-      <path d="M 128,60 L 123,60 L 102,138 L 112,138 L 117,118 L 139,118 L 144,138 L 154,138 L 133,60 Z M 128,78 L 135,110 L 121,110 Z" />
-      <!-- Letter A Serifs at base -->
-      <rect x="100" y="136" width="14" height="2.5" rx="0.5" />
-      <rect x="142" y="136" width="14" height="2.5" rx="0.5" />
-
-      <!-- Letter 'S' (Interlaced curves flowing around and through A) -->
-      <path d="M 148,72 C 144,67 137,64 126,64 C 113,64 103,71 103,83 C 103,96 114,101 126,105 C 139,109 146,114 146,124 C 146,136 134,142 121,142 C 108,142 98,136 96,126 L 107,124 C 108,130 114,134 121,134 C 128,134 134,130 134,123 C 134,115 124,111 112,107 C 100,102 93,95 93,84 C 93,73 103,62 125,62 C 136,62 144,66 148,71 Z" 
-            fill="url(#goldSheen)" stroke="#5c3f10" stroke-width="0.8" />
+    <!-- 2. PEDESTAL COLLAR / RIDGE (y=65 to y=84) -->
+    <g id="collar">
+      <rect x="114" y="65" width="28" height="5" rx="1.5" fill="url(#goldHorizontal)" stroke="#5c4010" stroke-width="0.75" />
+      <polygon points="118,70 138,70 144,78 112,78" fill="url(#goldShadow)" stroke="#5c4010" stroke-width="0.75" />
+      <rect x="108" y="78" width="40" height="6" rx="2" fill="url(#goldHorizontal)" stroke="#fff8e7" stroke-width="0.75" />
     </g>
 
-    <!-- ======================================================== -->
-    <!-- 4. BRAND TITLE: "SHAHZEIN.A" (y: 168)                     -->
-    <!-- ======================================================== -->
-    <text x="128" y="184" 
-          font-family="'Cinzel', 'Trajan Pro', 'Georgia', 'Times New Roman', serif" 
-          font-size="25" 
-          font-weight="700" 
-          letter-spacing="1.5" 
-          fill="url(#goldGradient)" 
-          stroke="#4a320c" 
-          stroke-width="0.5" 
-          text-anchor="middle">SHAHZEIN.A</text>
+    <!-- 3. INTERLOCKING "S A" MONOGRAM (y=84 to y=238) -->
+    <g id="monogram">
+      
+      <!-- Letter 'A' (Stately Architectural Framework) -->
+      <!-- Left Leg -->
+      <polygon points="128,86 122,86 86,228 106,228 116,192 128,192" 
+               fill="url(#goldMain)" stroke="#3c2a08" stroke-width="1.2" stroke-linejoin="round" />
+      <!-- Right Leg (Shaded for 3D Bevel) -->
+      <polygon points="128,86 134,86 170,228 150,228 140,192 128,192" 
+               fill="url(#goldShadow)" stroke="#3c2a08" stroke-width="1.2" stroke-linejoin="round" />
+      
+      <!-- A Crossbar -->
+      <polygon points="113,180 143,180 145,190 111,190" fill="url(#goldHorizontal)" stroke="#3c2a08" stroke-width="1" />
+      
+      <!-- Inner Triangular Counter (Onyx cut-out) -->
+      <polygon points="128,114 117,166 139,166" fill="#0e0d0c" stroke="#5c4010" stroke-width="0.75" />
+      
+      <!-- Letter A Solid Serif Feet -->
+      <rect x="80" y="226" width="30" height="6" rx="1" fill="url(#goldHorizontal)" stroke="#3c2a08" stroke-width="0.75" />
+      <rect x="146" y="226" width="30" height="6" rx="1" fill="url(#goldHorizontal)" stroke="#3c2a08" stroke-width="0.75" />
 
-    <!-- ======================================================== -->
-    <!-- 5. SUB-TITLE: "= PARFUMERIE =" (y: 206)                   -->
-    <!-- ======================================================== -->
-    <!-- Left Double Wings/Bars -->
-    <line x1="36" y1="202" x2="64" y2="202" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round" />
-    <line x1="36" y1="207" x2="64" y2="207" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round" />
+      <!-- Letter 'S' (Bold 3D Curving Ribbon Interlocking With A) -->
+      <!-- Outer/Main S Body with Rich 3D Gradient Stroke/Fill -->
+      <!-- Upper Curve of S (Flowing over Left Shoulder of A) -->
+      <path d="M 166,118 C 160,98 144,88 126,88 C 100,88 80,104 80,128 C 80,154 102,166 126,174 C 152,182 166,194 166,212 C 166,232 146,242 124,242 C 102,242 86,230 82,212 L 102,208 C 104,218 112,224 124,224 C 134,224 144,218 144,210 C 144,198 132,190 112,182 C 88,172 60,158 60,128 C 60,98 86,70 126,70 C 152,70 172,84 182,108 Z" 
+            fill="url(#goldHighlight)" stroke="#2a1b04" stroke-width="1.8" stroke-linejoin="round" />
 
-    <!-- Center Text -->
-    <text x="128" y="209" 
-          font-family="'Cinzel', 'Trajan Pro', 'Georgia', 'Times New Roman', serif" 
-          font-size="16" 
-          font-weight="700" 
-          letter-spacing="3" 
-          fill="url(#goldGradient)" 
-          stroke="#4a320c" 
-          stroke-width="0.4" 
-          text-anchor="middle">PARFUMERIE</text>
+      <!-- S 3D Inner Bevel / Spine Highlight for Ultra Crisp Relief -->
+      <path d="M 126,74 C 148,74 164,86 172,106 L 158,114 C 152,100 140,92 126,92 C 104,92 84,106 84,128 C 84,150 104,162 124,170 C 150,178 162,188 162,208 C 162,224 146,238 124,238 C 106,238 92,228 86,214 L 98,210 C 102,218 110,222 124,222 C 138,222 140,214 140,208 C 140,200 130,194 114,186 C 92,176 64,162 64,128 C 64,102 88,74 126,74 Z" 
+            fill="url(#goldMain)" opacity="0.9" />
 
-    <!-- Right Double Wings/Bars -->
-    <line x1="192" y1="202" x2="220" y2="202" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round" />
-    <line x1="192" y1="207" x2="220" y2="207" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round" />
+      <!-- Distinct Serif Terminals on S -->
+      <!-- Top Terminal -->
+      <polygon points="172,106 186,108 182,126 166,118" fill="url(#goldHorizontal)" stroke="#3c2a08" stroke-width="0.75" />
+      <!-- Bottom Terminal -->
+      <polygon points="82,212 70,208 72,190 88,198" fill="url(#goldHorizontal)" stroke="#3c2a08" stroke-width="0.75" />
+    </g>
 
-    <!-- ======================================================== -->
-    <!-- 6. TAGLINE: "BE REMEMBERED DIFFERENTLY" (y: 232)          -->
-    <!-- ======================================================== -->
-    <text x="128" y="232" 
-          font-family="'Plus Jakarta Sans', 'Helvetica Neue', 'Arial', sans-serif" 
-          font-size="10.5" 
-          font-weight="700" 
-          letter-spacing="1.2" 
-          fill="#5a5a5a" 
-          text-anchor="middle">BE REMEMBERED DIFFERENTLY</text>
   </g>
 </svg>
