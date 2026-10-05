@@ -20,7 +20,7 @@ export const Hero: React.FC = () => {
             {/* Official Grand Maison Emblem & Brand Mark - Increased Size in Hero */}
             <div className="pb-2 pt-1">
               <img
-                src="/images/shahzein-official-logo.svg"
+                src="/images/shahzein-official-logo.svg?v=20261005"
                 alt="SHAHZEIN.A PARFUMERIE - BE REMEMBERED DIFFERENTLY"
                 className="h-44 sm:h-52 md:h-60 lg:h-68 w-auto object-contain filter drop-shadow-[0_12px_32px_rgba(0,0,0,0.95)] transition-transform duration-500 hover:scale-[1.02]"
                 loading="eager"
