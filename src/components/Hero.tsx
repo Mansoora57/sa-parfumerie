@@ -17,14 +17,15 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Brand Story & CTAs */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Clean unboxed metadata separator */}
-            <div className="flex items-center gap-2.5 text-xs tracking-[0.22em] uppercase text-[#c5a059] font-medium font-cinzel">
-              <img src="/favicon.svg" alt="Shahzein.A Crest" className="w-5 h-5 object-contain" />
-              <span>SHAHZEIN.A PARFUMERIE</span>
-              <span aria-hidden="true" className="text-[#685538]">·</span>
-              <span className="text-[#dcd1be] text-[11px] font-sans font-normal tracking-[0.16em]">BE REMEMBERED DIFFERENTLY</span>
+            {/* Official Grand Maison Emblem & Brand Mark - Increased Size in Hero */}
+            <div className="pb-2 pt-1">
+              <img
+                src="/images/shahzein-official-logo.svg"
+                alt="SHAHZEIN.A PARFUMERIE - BE REMEMBERED DIFFERENTLY"
+                className="h-44 sm:h-52 md:h-60 lg:h-68 w-auto object-contain filter drop-shadow-[0_12px_32px_rgba(0,0,0,0.95)] transition-transform duration-500 hover:scale-[1.02]"
+                loading="eager"
+              />
             </div>
-
 
             {/* Main Headline */}
             <h1 className="font-cinzel text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[#fbf9f5] leading-[1.15] text-balance">

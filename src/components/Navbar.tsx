@@ -20,7 +20,6 @@ import { ShareStoreModal } from './ShareStoreModal';
 import { SecurityProtocolsModal } from './SecurityProtocolsModal';
 import { auth, loginWithGoogle, logoutUser } from '../firebase';
 import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
-import { ShahzeinBrandLogo } from './ShahzeinBrandLogo';
 
 export const Navbar: React.FC = () => {
   const {
@@ -173,7 +172,7 @@ export const Navbar: React.FC = () => {
 
       {/* Main Navigation Bar */}
       <header className="sticky top-0 z-40 bg-[#0c0b0a]/95 backdrop-blur-md border-b border-[#221e1a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-22 sm:h-24 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
           {/* Mobile menu trigger */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
@@ -192,24 +191,8 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Brand Logo - Authentic Geometric SA Flacon Emblem & Prominent Typography */}
-          <div className="flex items-center">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setActiveView('store');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="group flex items-center transition-all focus:outline-none py-1"
-              title="SHAHZEIN•A Parfumerie — Be Remembered Differently"
-            >
-              <ShahzeinBrandLogo size="md" />
-            </a>
-          </div>
-
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-xs tracking-[0.16em] uppercase font-medium text-[#c5baa8]">
+          <nav className="hidden lg:flex items-center gap-8 text-xs tracking-[0.18em] uppercase font-medium text-[#c5baa8]">
             <a
               href="#collections"
               onClick={() => setActiveView('store')}
