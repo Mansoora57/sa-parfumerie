@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useStore } from '../context/StoreContext';
-import { safeCopyToClipboard } from '../utils/clipboard';
 import {
   ShoppingBag,
   Sparkles,
@@ -10,16 +9,8 @@ import {
   Menu,
   X,
   Search,
-  Share2,
-  Lock,
-  User,
-  LogOut,
-  CheckCircle2,
 } from 'lucide-react';
-import { ShareStoreModal } from './ShareStoreModal';
 import { SecurityProtocolsModal } from './SecurityProtocolsModal';
-import { auth, loginWithGoogle, logoutUser } from '../firebase';
-import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
 
 export const Navbar: React.FC = () => {
   const {
@@ -38,43 +29,7 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isShareOpen, setIsShareOpen] = useState(false);
   const [isProtocolsOpen, setIsProtocolsOpen] = useState(false);
-  const [currentUser, setCurrentUser] = useState<FirebaseUser | null>(null);
-  const [isLoggingIn, setIsLoggingIn] = useState(false);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  const handleGoogleLogin = async () => {
-    setIsLoggingIn(true);
-    try {
-      const user = await loginWithGoogle();
-      if (user) {
-        showToast(`Welcome back, ${user.displayName || user.email || 'Admin'}!`);
-      }
-    } catch (err: any) {
-      showToast(`Login failed: ${err.message || 'Please retry'}`);
-    } finally {
-      setIsLoggingIn(false);
-    }
-  };
-
-  const handleLogout = async () => {
-    try {
-      await logoutUser();
-      showToast('Signed out of store account');
-    } catch (err: any) {
-      showToast('Error signing out');
-    }
-  };
-
-  const isAdmin = currentUser?.email === 'mansoora.ahmed.pk@gmail.com';
-
 
   const lowStockCount = fragrances.filter((f) => f.stockQuantity <= f.lowStockThreshold).length;
 
@@ -155,16 +110,8 @@ export const Navbar: React.FC = () => {
             </button>
           </nav>
 
-          {/* Right Action Icons: Share, Search & Cart */}
+          {/* Right Action Icons: CMS, Search & Cart */}
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsShareOpen(true)}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-[#1b1712] border border-[#3d3224] hover:border-[#c5a059] rounded text-xs text-[#c5a059] transition-colors cursor-pointer font-cinzel font-semibold"
-            >
-              <Share2 className="w-3.5 h-3.5" />
-              <span>Share Store</span>
-            </button>
-
             {/* View Mode Switcher: Storefront vs CMS Inventory */}
             <button
               onClick={() => setActiveView(activeView === 'store' ? 'cms' : 'store')}
@@ -192,48 +139,7 @@ export const Navbar: React.FC = () => {
               <span className="text-[11px] tracking-wide">Search notes...</span>
             </button>
 
-            {/* Firebase Google Auth Pill */}
-            {currentUser ? (
-              <div className="flex items-center gap-2 p-1 pl-2.5 bg-[#171410] border border-[#3d3224] rounded-full text-xs">
-                {currentUser.photoURL ? (
-                  <img
-                    src={currentUser.photoURL}
-                    alt={currentUser.displayName || 'User'}
-                    className="w-5 h-5 rounded-full border border-[#c5a059]"
-                  />
-                ) : (
-                  <User className="w-3.5 h-3.5 text-[#c5a059]" />
-                )}
-                <span className="font-medium text-[#f4efe6] max-w-[100px] truncate hidden md:inline">
-                  {currentUser.displayName || currentUser.email?.split('@')[0]}
-                </span>
-                {isAdmin && (
-                  <span className="text-[10px] bg-[#c5a059] text-[#0b0a09] font-bold px-1.5 py-0.5 rounded-full font-mono">
-                    ADMIN
-                  </span>
-                )}
-                <button
-                  onClick={handleLogout}
-                  className="p-1 hover:text-[#c5a059] transition-colors cursor-pointer text-[#8e8171]"
-                  title="Sign out of store"
-                >
-                  <LogOut className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={handleGoogleLogin}
-                disabled={isLoggingIn}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-[#1b1712] hover:bg-[#282119] border border-[#c5a059] text-[#c5a059] hover:text-[#f4efe6] rounded text-xs transition-all cursor-pointer font-cinzel font-semibold shadow-sm"
-                title="Sign in with your Google Account"
-              >
-                <User className="w-3.5 h-3.5" />
-                <span>{isLoggingIn ? 'Connecting...' : 'Login / Sign In'}</span>
-              </button>
-            )}
-
             {/* Shopping Bag Button */}
-
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative flex items-center gap-2.5 px-3 py-2 bg-[#191612] hover:bg-[#25201a] border border-[#382f24] rounded transition-all text-[#f4efe6] group cursor-pointer"
@@ -258,17 +164,6 @@ export const Navbar: React.FC = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden bg-[#100e0c] border-b border-[#2a241c] px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
             <div className="flex flex-col space-y-3 text-xs tracking-[0.18em] uppercase font-medium text-[#c5baa8]">
-              <button
-                onClick={() => {
-                  setIsShareOpen(true);
-                  setMobileMenuOpen(false);
-                }}
-                className="py-2 text-left flex items-center justify-between text-[#c5a059] border-b border-[#1f1b16]"
-              >
-                <span>Share Store Address with Client</span>
-                <Share2 className="w-4 h-4" />
-              </button>
-
               <a
                 href="#collections"
                 onClick={() => {
@@ -408,9 +303,6 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
       )}
-
-      {/* Share Store Modal */}
-      <ShareStoreModal isOpen={isShareOpen} onClose={() => setIsShareOpen(false)} />
 
       {/* Security Protocols Modal */}
       <SecurityProtocolsModal isOpen={isProtocolsOpen} onClose={() => setIsProtocolsOpen(false)} />
