@@ -1,190 +1,185 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 330" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 380" fill="none">
   <defs>
-    <!-- 24K Multi-Stop Metallic Gold Gradient with Bevel Sheen -->
-    <linearGradient id="goldMatterGrad" x1="15%" y1="0%" x2="85%" y2="100%">
-      <stop offset="0%" stop-color="#fff8eb" />
-      <stop offset="25%" stop-color="#f5dc99" />
-      <stop offset="50%" stop-color="#ffd87d" />
-      <stop offset="75%" stop-color="#c59b43" />
-      <stop offset="100%" stop-color="#7a5518" />
+    <!-- Multi-Stop Ultra-Luxe 24K Polished Metallic Gold Gradient -->
+    <linearGradient id="realGoldBevel" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#fff8e7" />
+      <stop offset="18%" stop-color="#fae2a3" />
+      <stop offset="42%" stop-color="#d4aa4d" />
+      <stop offset="68%" stop-color="#b68932" />
+      <stop offset="90%" stop-color="#7a5518" />
+      <stop offset="100%" stop-color="#4e350b" />
     </linearGradient>
 
-    <linearGradient id="goldLight" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#fffdf7" />
-      <stop offset="50%" stop-color="#f8e7ba" />
-      <stop offset="100%" stop-color="#d4aa4d" />
+    <!-- Highlight Sheen Gradient -->
+    <linearGradient id="goldLightSheen" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#fae7b9" />
+      <stop offset="100%" stop-color="#c5993b" />
     </linearGradient>
 
-    <linearGradient id="goldDeep" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#b88d3b" />
-      <stop offset="70%" stop-color="#6e4d14" />
-      <stop offset="100%" stop-color="#3d2a08" />
+    <!-- Deep Metallic Shadow Gradient -->
+    <linearGradient id="goldShadowDepth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9a732a" />
+      <stop offset="60%" stop-color="#5a3d0f" />
+      <stop offset="100%" stop-color="#2a1b05" />
     </linearGradient>
 
-    <filter id="goldDropShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.8" />
-      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffd87d" flood-opacity="0.2" />
+    <!-- Soft Drop Shadow for 3D Realism on Transparent Background -->
+    <filter id="luxeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.9" />
     </filter>
   </defs>
 
-  <!-- PURE TRANSPARENT BACKGROUND - NO BACKGROUND FILL -->
+  <!-- PURE TRANSPARENT BACKGROUND (No card, no black box) -->
 
-  <g filter="url(#goldDropShadow)">
-    <!-- ======================================================== -->
-    <!-- 1. TOP: GEOMETRIC ARCHITECTURAL SA PERFUME FLACON EMBLEM -->
-    <!-- Center: X = 210, Y: 12 to 160                            -->
-    <!-- ======================================================== -->
-    <g stroke-linecap="round" stroke-linejoin="round">
-      <!-- Faceted Diamond Jewel Stopper (Cap) -->
-      <polygon
-        points="184,14 236,14 262,34 210,64 158,34"
-        fill="url(#goldMatterGrad)"
-        stroke="#fffdf7"
-        stroke-width="1.2"
-      />
-      <!-- Stopper internal facet reflections -->
-      <polygon points="184,14 236,14 210,34" fill="#fffdf7" opacity="0.92" />
-      <polygon points="184,14 158,34 210,34" fill="url(#goldLight)" opacity="0.95" />
-      <polygon points="236,14 262,34 210,34" fill="url(#goldDeep)" />
-      <polygon points="158,34 210,64 210,34" fill="url(#goldLight)" />
-      <polygon points="262,34 210,64 210,34" fill="url(#goldDeep)" />
-      <line x1="210" y1="14" x2="210" y2="64" stroke="#ffffff" stroke-width="1.8" stroke-opacity="0.95" />
+  <g filter="url(#luxeShadow)">
+    <!-- ================================================================= -->
+    <!-- 3RD IMAGE EMBLEM: THE AUTHENTIC 3D ARCHITECTURAL SA PERFUME FLACON -->
+    <!-- Center: X=210                                                    -->
+    <!-- ================================================================= -->
 
-      <!-- Neck & Collars -->
-      <!-- Upper Collar -->
-      <rect x="178" y="66" width="64" height="5.5" rx="1.5" fill="url(#goldLight)" stroke="#fff" stroke-width="0.5" />
-      <!-- Vertical Neck Stem -->
-      <rect x="189" y="71.5" width="9" height="19" fill="url(#goldLight)" />
-      <rect x="222" y="71.5" width="9" height="19" fill="url(#goldDeep)" />
-      <!-- Lower Collar (Shoulder Ridge) -->
-      <rect x="174" y="90.5" width="72" height="6.5" rx="1.5" fill="url(#goldLight)" stroke="#fff" stroke-width="0.5" />
+    <!-- 1. DIAMOND JEWEL STOPPER (Faceted Hexagonal Gem) -->
+    <!-- Top horizontal facet -->
+    <polygon points="182,12 238,12 210,26" fill="url(#goldLightSheen)" />
+    <!-- Top-left facet -->
+    <polygon points="182,12 152,32 210,26" fill="url(#realGoldBevel)" />
+    <!-- Top-right facet -->
+    <polygon points="238,12 268,32 210,26" fill="url(#goldShadowDepth)" />
+    <!-- Bottom-left facet -->
+    <polygon points="152,32 210,50 210,26" fill="url(#realGoldBevel)" />
+    <!-- Bottom-right facet -->
+    <polygon points="268,32 210,50 210,26" fill="url(#goldShadowDepth)" />
+    <!-- Stopper Ridge Edges -->
+    <polygon
+      points="182,12 238,12 268,32 210,50 152,32"
+      fill="none"
+      stroke="#fffbe8"
+      stroke-width="1.2"
+      stroke-linejoin="round"
+    />
 
-      <!-- Right Shoulder & Right Vertical Wall -->
-      <path
-        d="M 230 94 L 249 94 L 271 120 L 271 168"
-        fill="none"
-        stroke="url(#goldMatterGrad)"
-        stroke-width="6.5"
-        stroke-linejoin="miter"
-        stroke-miterlimit="4"
-      />
+    <!-- 2. NECK & DOUBLE COLLARS -->
+    <!-- Upper Collar Bar -->
+    <rect x="180" y="52" width="60" height="4.5" rx="1" fill="url(#goldLightSheen)" stroke="#fff" stroke-width="0.4" />
+    <!-- Vertical Neck Pillars -->
+    <rect x="194" y="56.5" width="7" height="9.5" fill="url(#realGoldBevel)" />
+    <rect x="219" y="56.5" width="7" height="9.5" fill="url(#goldShadowDepth)" />
+    <!-- Lower Collar Bar -->
+    <rect x="172" y="66" width="76" height="5.5" rx="1.2" fill="url(#goldLightSheen)" stroke="#fff" stroke-width="0.4" />
 
-      <!-- Bottom Horizontal Base Bar -->
-      <path
-        d="M 198 168 L 271 168"
-        fill="none"
-        stroke="url(#goldMatterGrad)"
-        stroke-width="6.5"
-        stroke-linecap="square"
-      />
+    <!-- 3. FLACON BODY & INTERLOCKING 'SA' MONOGRAM -->
 
-      <!-- Architectural Letter 'A' -->
-      <!-- Right leg of A (Slanted pillar to base) -->
-      <path
-        d="M 210 97 L 268 168"
-        fill="none"
-        stroke="url(#goldMatterGrad)"
-        stroke-width="8.5"
-        stroke-linecap="square"
-      />
-      <!-- Left leg of A (Slanted down to left base) -->
-      <path
-        d="M 210 97 L 164 163"
-        fill="none"
-        stroke="url(#goldMatterGrad)"
-        stroke-width="7.5"
-        stroke-linecap="square"
-      />
-      <!-- Horizontal crossbar of A -->
-      <path
-        d="M 181 142 L 243 142"
-        fill="none"
-        stroke="url(#goldMatterGrad)"
-        stroke-width="6.5"
-        stroke-linecap="square"
-      />
+    <!-- Right Shoulder & Right Vertical Wall -->
+    <!-- Horizontal shoulder from neck to corner -->
+    <path
+      d="M 228 69 L 254 69 L 282 95 L 282 222 L 273 222 L 273 99 L 249 77 L 228 77 Z"
+      fill="url(#realGoldBevel)"
+      stroke="url(#realGoldBevel)"
+      stroke-width="0.5"
+    />
 
-      <!-- Flowing Interlocking Letter 'S' -->
-      <!-- Forms rounded left bottle shoulder and loops at base -->
-      <path
-        d="M 200 97 C 172 93 148 109 148 136 C 148 164 178 168 198 178 C 218 188 222 202 218 214 C 212 228 188 232 168 230 C 150 228 140 216 140 200"
-        fill="none"
-        stroke="url(#goldMatterGrad)"
-        stroke-width="8.5"
-        stroke-linecap="round"
-        transform="matrix(0.72 0 0 0.72 65 -7)"
-      />
-      <!-- Beveled Highlight Accent on S -->
-      <path
-        d="M 197 98 C 174 94 151 110 151 136 C 151 162 180 166 199 176 C 217 186 220 199 216 211"
-        fill="none"
-        stroke="#ffffff"
-        stroke-width="1.8"
-        stroke-linecap="round"
-        opacity="0.85"
-        transform="matrix(0.72 0 0 0.72 65 -7)"
-      />
-    </g>
+    <!-- Architectural Letter 'A' (Sharp Apex at Neck, Slanted Legs, Crossbar) -->
+    <!-- 'A' Apex & Right Leg -->
+    <path
+      d="M 210 74 L 220 74 L 282 238 L 268 238 L 210 96 L 196 130 L 187 122 Z"
+      fill="url(#realGoldBevel)"
+    />
+    <!-- 'A' Left Leg (Lower Segment under 'S') -->
+    <path
+      d="M 174 158 L 138 238 L 152 238 L 184 166 Z"
+      fill="url(#realGoldBevel)"
+    />
+    <!-- 'A' Horizontal Crossbar -->
+    <path
+      d="M 166 182 L 236 182 L 236 190 L 166 190 Z"
+      fill="url(#realGoldBevel)"
+    />
+    <!-- 'A' Base Bar -->
+    <path
+      d="M 202 232 L 282 232 L 282 238 L 202 238 Z"
+      fill="url(#realGoldBevel)"
+    />
 
-    <!-- ======================================================== -->
-    <!-- 2. MIDDLE: "SHAHZEIN.A" TYPOGRAPHY                       -->
-    <!-- Bold luxury serif lettering (Cinzel style)               -->
-    <!-- ======================================================== -->
+    <!-- Flowing Ribbon 'S' Monogram (Interlocking with 'A', forming Left Shoulder) -->
+    <!-- The luxury ribbon of 'S' curves gracefully on the left and loops at the base -->
+    <path
+      d="M 192 74 C 158 74 134 94 134 126 C 134 160 162 178 190 190 C 220 202 226 216 222 230 C 216 248 186 254 156 244 C 142 239 136 228 136 208 L 126 208 C 126 236 138 250 156 256 C 196 268 234 256 242 230 C 248 210 238 192 200 178 C 170 166 148 152 148 126 C 148 104 168 86 192 84 Z"
+      fill="url(#realGoldBevel)"
+    />
+
+    <!-- Ribbon 'S' Top Highlight Edge -->
+    <path
+      d="M 190 75 C 160 75 136 95 136 126 C 136 158 164 176 192 188 C 222 200 228 214 224 228"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      opacity="0.9"
+    />
+
+    <!-- Ribbon 'S' Bottom Loop Accent Hook -->
+    <path
+      d="M 136 208 L 136 192 L 145 192 L 145 208 Z"
+      fill="url(#realGoldBevel)"
+    />
+
+    <!-- ================================================================= -->
+    <!-- TYPOGRAPHY: EXACT SAME CLEAN PROMINENT LUXURY MATTER              -->
+    <!-- ================================================================= -->
+
+    <!-- "SHAHZEIN.A" Serif Heading -->
     <text
       x="210"
-      y="222"
+      y="288"
       text-anchor="middle"
       font-family="'Cinzel', Georgia, serif"
       font-weight="700"
-      font-size="35"
+      font-size="34"
       letter-spacing="5"
-      fill="url(#goldMatterGrad)"
+      fill="url(#realGoldBevel)"
     >SHAHZEIN.A</text>
 
-    <!-- ======================================================== -->
-    <!-- 3. "PARFUMERIE" FLANKED BY 3 BARS ON LEFT & RIGHT        -->
-    <!-- ======================================================== -->
-    <!-- 3 Horizontal Bars on Left -->
-    <rect x="22" y="244" width="70" height="3.5" rx="1" fill="url(#goldMatterGrad)" />
-    <rect x="22" y="252" width="70" height="3.5" rx="1" fill="url(#goldMatterGrad)" />
-    <rect x="22" y="260" width="70" height="3.5" rx="1" fill="url(#goldMatterGrad)" />
+    <!-- "PARFUMERIE" FLANKED BY 3 BARS ON EACH SIDE -->
+    <!-- 3 Bars Left -->
+    <rect x="24" y="311" width="68" height="3.5" rx="1" fill="url(#realGoldBevel)" />
+    <rect x="24" y="318.5" width="68" height="3.5" rx="1" fill="url(#realGoldBevel)" />
+    <rect x="24" y="326" width="68" height="3.5" rx="1" fill="url(#realGoldBevel)" />
 
-    <!-- Word: PARFUMERIE -->
+    <!-- Text: PARFUMERIE -->
     <text
       x="210"
-      y="259"
+      y="325"
       text-anchor="middle"
       font-family="'Cinzel', Georgia, serif"
       font-weight="600"
-      font-size="19"
-      letter-spacing="5.5"
-      fill="url(#goldMatterGrad)"
+      font-size="18.5"
+      letter-spacing="5"
+      fill="url(#realGoldBevel)"
     >PARFUMERIE</text>
 
-    <!-- 3 Horizontal Bars on Right -->
-    <rect x="328" y="244" width="70" height="3.5" rx="1" fill="url(#goldMatterGrad)" />
-    <rect x="328" y="252" width="70" height="3.5" rx="1" fill="url(#goldMatterGrad)" />
-    <rect x="328" y="260" width="70" height="3.5" rx="1" fill="url(#goldMatterGrad)" />
+    <!-- 3 Bars Right -->
+    <rect x="328" y="311" width="68" height="3.5" rx="1" fill="url(#realGoldBevel)" />
+    <rect x="328" y="318.5" width="68" height="3.5" rx="1" fill="url(#realGoldBevel)" />
+    <rect x="328" y="326" width="68" height="3.5" rx="1" fill="url(#realGoldBevel)" />
 
-    <!-- ======================================================== -->
-    <!-- 4. "BE REMEMBERED DIFFERENTLY" FLANKED BY 2 BARS         -->
-    <!-- ======================================================== -->
+    <!-- "BE REMEMBERED DIFFERENTLY" FLANKED BY HORIZONTAL BARS -->
     <!-- Left bar -->
-    <rect x="22" y="283" width="60" height="3" rx="0.75" fill="url(#goldMatterGrad)" />
+    <rect x="24" y="351" width="58" height="2.8" rx="0.8" fill="url(#realGoldBevel)" />
 
-    <!-- Tagline -->
+    <!-- Slogan text -->
     <text
       x="210"
-      y="287.5"
+      y="355.5"
       text-anchor="middle"
       font-family="'Plus Jakarta Sans', system-ui, sans-serif"
       font-weight="600"
       font-size="11.5"
       letter-spacing="3.2"
-      fill="#d6cab8"
+      fill="#dfd3c0"
     >BE REMEMBERED DIFFERENTLY</text>
 
     <!-- Right bar -->
-    <rect x="338" y="283" width="60" height="3" rx="0.75" fill="url(#goldMatterGrad)" />
+    <rect x="338" y="351" width="58" height="2.8" rx="0.8" fill="url(#realGoldBevel)" />
   </g>
 </svg>
