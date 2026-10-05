@@ -50,15 +50,15 @@ export const SecurityProtocolsModal: React.FC<SecurityProtocolsModalProps> = ({ 
       title: 'Tamper-Evident Delivery & Handover Protocol',
       badge: 'Wax-Sealed Verification',
       icon: Truck,
-      desc: 'Every flacon is sealed with the Maison Shahzein hot beeswax crest. Courier delivery requires SMS OTP verification from the client prior to handover, preventing theft or counterfeit substitution.',
-      standard: 'Maison High-Jewelry Freight Standard',
+      desc: 'Every perfume bottle is sealed with the Shahzein hot beeswax crest. Courier delivery requires SMS OTP verification from the client prior to handover, preventing theft or counterfeit substitution.',
+      standard: 'High-Jewelry Security Freight Standard',
     },
     {
       id: 'privacy',
       title: 'Client Confidentiality & Monogram Protection',
       badge: 'Zero Telemetry Leaks',
       icon: FileCheck,
-      desc: 'Bespoke bottle engravings and patron purchase histories remain strictly confidential. No commercial ad tracking, third-party pixel snooping, or data brokering is permitted.',
+      desc: 'Custom bottle engravings and customer purchase histories remain strictly confidential. No commercial ad tracking, third-party pixel snooping, or data brokering is permitted.',
       standard: 'GDPR & Pakistan PECA Aligned',
     },
     {
@@ -66,7 +66,7 @@ export const SecurityProtocolsModal: React.FC<SecurityProtocolsModalProps> = ({ 
       title: '35% Pure Extrait Batch Traceability',
       badge: 'Certified Genuine',
       icon: BadgeCheck,
-      desc: 'Each flacon is laser-etched with its unique batch number (e.g. BATCH-2026-X1) linking it to its 90-day cask maceration log and artisanal certification.',
+      desc: 'Each bottle is laser-etched with its unique batch number (e.g. BATCH-2026-X1) linking it to its 90-day cask aging log and artisanal certification.',
       standard: 'IFRA (International Fragrance Association) Certified',
     },
   ];

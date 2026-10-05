@@ -8,7 +8,7 @@ export const CollectionsGrid: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const filterTabs = [
-    { id: 'all', label: 'All Flacons' },
+    { id: 'all', label: 'All Perfumes' },
     { id: 'Oud Royale', label: 'Oud Royale' },
     { id: 'Floral Nocturne', label: 'Floral Nocturne' },
     { id: 'Amber Heritage', label: 'Amber Heritage' },
@@ -34,7 +34,7 @@ export const CollectionsGrid: React.FC = () => {
             </div>
 
             <h2 className="font-cinzel text-3xl sm:text-4xl font-semibold text-[#fbf9f5]">
-              Masterpiece Flacons
+              Masterpiece Perfumes
             </h2>
 
             <p className="text-xs text-[#a49685] max-w-xl">

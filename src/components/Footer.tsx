@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-xs text-[#a09280] leading-relaxed max-w-sm">
-              Haute Parfumerie house crafting pure Extrait de Parfum from rare aged agarwood, harvested Taif roses, and fossilized amber.
+              Luxury perfume house crafting pure concentrated perfume from rare aged agarwood, harvested Taif roses, and fossilized amber.
             </p>
 
             {/* Hosting address marker (Working platform only) */}
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
           {/* Navigation Links */}
           <div className="md:col-span-2 space-y-3">
             <div className="text-[11px] font-cinzel uppercase tracking-widest text-[#f5f0e8] font-semibold">
-              The Maison
+              The Perfume House
             </div>
             <ul className="space-y-2 text-[#9a8c7b]">
               <li>
@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#bespoke-craft" className="hover:text-[#c5a059] transition-colors">
-                  Flacon Métier
+                  Bottle Craftsmanship
                 </a>
               </li>
               {isWorkingPlatform && (
@@ -88,16 +88,16 @@ export const Footer: React.FC = () => {
           {/* Client Concierge & Atelier */}
           <div className="md:col-span-3 space-y-3">
             <div className="text-[11px] font-cinzel uppercase tracking-widest text-[#f5f0e8] font-semibold">
-              Atelier &amp; Concierge
+              Studio &amp; Customer Care
             </div>
             <div className="space-y-2 text-xs text-[#9a8c7b]">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#c5a059] shrink-0 mt-0.5" />
-                <span>Clifton Private Atelier, Block 4, Karachi, Pakistan</span>
+                <span>Clifton Private Studio, Block 4, Karachi, Pakistan</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#c5a059] shrink-0" />
-                <span>+92 300 8241920 (VIP Concierge)</span>
+                <span>+92 300 8241920 (VIP Client Care)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#c5a059] shrink-0" />

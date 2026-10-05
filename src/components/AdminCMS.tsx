@@ -133,7 +133,7 @@ export const AdminCMS: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] tracking-[0.25em] uppercase text-[#c5a059] font-cinzel font-semibold">
-                Maison Shahzein Central Portal
+                Shahzein Central Management Portal
               </span>
               <span className="text-[10px] text-[#716556]">·</span>
               <span className="text-[10px] text-emerald-400 font-mono">
@@ -145,7 +145,7 @@ export const AdminCMS: React.FC = () => {
               CMS Inventory Management
             </h1>
             <p className="text-xs text-[#9d8f7e] mt-0.5">
-              Live catalogue stocks, maceration batches, olfactory pyramids, and client order fulfillments.
+              Live catalogue stocks, aging batches, fragrance pyramids, and client order fulfillments.
             </p>
           </div>
 
@@ -176,7 +176,7 @@ export const AdminCMS: React.FC = () => {
             <div className="font-mono text-2xl font-bold text-[#f5f0e8] tabular-nums">
               {totalStockUnits}
             </div>
-            <div className="text-[10px] text-[#786c5c]">Active Bottled Flacons</div>
+            <div className="text-[10px] text-[#786c5c]">Active Perfume Bottles</div>
           </div>
 
           <div className="p-4 bg-[#14110e] border border-[#262017] rounded-lg space-y-1">
@@ -192,7 +192,7 @@ export const AdminCMS: React.FC = () => {
             <div className={`font-mono text-2xl font-bold tabular-nums ${lowStockCount > 0 ? 'text-amber-400' : 'text-emerald-400'}`}>
               {lowStockCount}
             </div>
-            <div className="text-[10px] text-[#786c5c]">Threshold ≤ 5 Flacons</div>
+            <div className="text-[10px] text-[#786c5c]">Threshold ≤ 5 Bottles</div>
           </div>
 
           <div className="p-4 bg-[#14110e] border border-[#262017] rounded-lg space-y-1">
@@ -295,7 +295,7 @@ export const AdminCMS: React.FC = () => {
                 <table className="w-full text-left text-xs">
                   <thead className="bg-[#191511] border-b border-[#292119] text-[#9c8e7d] uppercase text-[10px] tracking-wider font-cinzel">
                     <tr>
-                      <th className="py-3 px-4 font-semibold">Flacon</th>
+                      <th className="py-3 px-4 font-semibold">Perfume Bottle</th>
                       <th className="py-3 px-4 font-semibold">SKU &amp; Batch</th>
                       <th className="py-3 px-4 font-semibold">Collection</th>
                       <th className="py-3 px-4 font-semibold">Retail Price (PKR)</th>
@@ -734,7 +734,7 @@ export const AdminCMS: React.FC = () => {
             </button>
 
             <h3 className="font-cinzel text-lg font-bold text-[#f5f0e8] mb-4">
-              Add New Luxury Flacon to Vault
+              Add New Luxury Perfume to Vault
             </h3>
 
             <form onSubmit={handleCreateProduct} className="space-y-4 text-xs">
@@ -832,7 +832,7 @@ export const AdminCMS: React.FC = () => {
                 <label className="text-[#a49685]">Description</label>
                 <textarea
                   rows={2}
-                  placeholder="Artisanal description of accords, notes, and sillage..."
+                  placeholder="Artisanal description of accords, notes, and scent trail..."
                   value={newFragData.description}
                   onChange={(e) => setNewFragData({ ...newFragData, description: e.target.value })}
                   className="w-full bg-[#1b1712] border border-[#30271e] rounded px-3 py-2 text-[#f5f0e8] outline-none focus:border-[#c5a059]"
@@ -851,7 +851,7 @@ export const AdminCMS: React.FC = () => {
                   type="submit"
                   className="px-5 py-2 bg-[#c5a059] hover:bg-[#d9b56d] text-[#0b0a09] font-cinzel font-bold uppercase rounded cursor-pointer"
                 >
-                  Save &amp; Publish Flacon
+                  Save &amp; Publish Perfume
                 </button>
               </div>
             </form>

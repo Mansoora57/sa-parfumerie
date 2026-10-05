@@ -11,13 +11,13 @@ export const Craftsmanship: React.FC = () => {
         {/* Editorial Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="flex items-center justify-center gap-2 text-xs tracking-[0.22em] uppercase text-[#c5a059] font-medium">
-            <span>Haute Parfumerie Métier</span>
+            <span>Luxury Perfumery Craft</span>
             <span aria-hidden="true">·</span>
-            <span>Maison Shahzein</span>
+            <span>House of Shahzein</span>
           </div>
 
           <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#fbf9f5]">
-            The Alchemy of Flacon &amp; Sillage
+            The Art of Bottle Craft &amp; Scent Trail
           </h2>
 
           <p className="font-cormorant text-xl text-[#d0c2b0] italic font-light">
@@ -38,7 +38,7 @@ export const Craftsmanship: React.FC = () => {
             </div>
 
             <h3 className="font-cinzel text-xl font-semibold text-[#f5f0e8]">
-              35% Pure Extrait de Parfum
+              35% Pure Perfume Extract
             </h3>
 
             <p className="text-xs text-[#a89b8a] leading-relaxed">
@@ -53,7 +53,7 @@ export const Craftsmanship: React.FC = () => {
             </div>
 
             <div className="text-[11px] font-mono tracking-wider uppercase text-[#c5a059]">
-              02. Flacon Sculpture
+              02. Bottle Design &amp; Craftsmanship
             </div>
 
             <h3 className="font-cinzel text-xl font-semibold text-[#f5f0e8]">
@@ -61,7 +61,7 @@ export const Craftsmanship: React.FC = () => {
             </h3>
 
             <p className="text-xs text-[#a89b8a] leading-relaxed">
-              Each flacon is cast from thick optical glass with precision-cut bevels that refract the natural amber and ruby hues of the macerated essence. Completed with a custom solid-weighted brass magnetic cap that snaps into alignment with satisfying resonance.
+              Each bottle is cast from thick optical glass with precision-cut bevels that refract the natural amber and ruby hues of the macerated essence. Completed with a custom solid-weighted brass magnetic cap that snaps into alignment with satisfying resonance.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export const Craftsmanship: React.FC = () => {
             </h3>
 
             <p className="text-xs text-[#a89b8a] leading-relaxed">
-              Make your flacon an heirloom. Our artisans hand-inscribe your chosen initials or milestone date onto a warm golden plaque, permanently affixed to the flacon prior to its sealing in our black lacquer vault coffret.
+              Make your perfume bottle an heirloom. Our artisans hand-inscribe your chosen initials or milestone date onto a warm golden plaque, permanently affixed to the bottle prior to its sealing in our black lacquer luxury presentation box.
             </p>
           </div>
         </div>
@@ -96,7 +96,7 @@ export const Craftsmanship: React.FC = () => {
               Take the Personalized Scent Consultation
             </h3>
             <p className="text-xs text-[#9d8e7c] max-w-xl">
-              Answer four brief sensory questions to receive a calculated olfactory match, notes breakdown, and bespoke layering protocol tailored for you.
+              Answer four brief sensory questions to receive a calculated fragrance match, scent notes breakdown, and custom layering guide tailored for you.
             </p>
           </div>
 

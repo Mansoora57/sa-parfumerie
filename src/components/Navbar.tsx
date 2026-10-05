@@ -162,7 +162,7 @@ export const Navbar: React.FC = () => {
                 )}
               </div>
               <span className="hidden sm:inline text-xs tracking-wider font-cinzel">
-                Coffret
+                Shopping Bag
               </span>
             </button>
           </div>
@@ -251,7 +251,7 @@ export const Navbar: React.FC = () => {
             </button>
 
             <h3 className="font-cinzel text-lg tracking-wider text-[#e6d8c3] mb-4">
-              Search the Olfactory Archive
+              Search the Fragrance Collection
             </h3>
 
             <div className="relative mb-6">

@@ -86,14 +86,14 @@ export const ProductDetailModal: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Wind className="w-4 h-4 text-[#c5a059]" />
                 <div>
-                  <div className="text-[10px] text-[#7d7162] uppercase tracking-wider">Sillage</div>
+                  <div className="text-[10px] text-[#7d7162] uppercase tracking-wider">Scent Trail</div>
                   <div className="text-[#f4efe6] font-medium">{selectedFragrance.sillage}</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Olfactory Architecture, Customization & Purchase */}
+          {/* Right Column: Fragrance Architecture, Customization & Purchase */}
           <div className="md:col-span-7 space-y-6">
             <div>
               {/* Clean metadata */}
@@ -115,7 +115,7 @@ export const ProductDetailModal: React.FC = () => {
               <div className="font-mono text-2xl font-semibold text-[#f5f0e8] mt-3 tabular-nums">
                 ₨ {price.toLocaleString()}
                 <span className="text-xs text-[#8c7f6f] font-sans font-normal ml-2">
-                  (Includes custom luxury coffret)
+                  (Includes custom luxury presentation box)
                 </span>
               </div>
             </div>
@@ -125,10 +125,10 @@ export const ProductDetailModal: React.FC = () => {
               {selectedFragrance.description}
             </p>
 
-            {/* Olfactory Pyramid */}
+            {/* Fragrance Pyramid */}
             <div className="bg-[#181511] p-4 rounded-lg border border-[#2f271e] space-y-3">
               <div className="text-[11px] tracking-[0.2em] uppercase font-cinzel text-[#c5a059]">
-                Olfactory Pyramid Architecture
+                Fragrance Notes &amp; Pyramid
               </div>
 
               <div className="space-y-2 text-xs">
@@ -155,10 +155,10 @@ export const ProductDetailModal: React.FC = () => {
               </div>
             </div>
 
-            {/* Flacon Volume Picker */}
+            {/* Bottle Volume Picker */}
             <div className="space-y-2">
               <label className="text-[11px] tracking-[0.2em] uppercase text-[#a89a88] block">
-                Select Flacon Volume
+                Select Bottle Size
               </label>
               <div className="grid grid-cols-3 gap-2">
                 {selectedFragrance.volumeOptions.map((opt) => (
@@ -187,7 +187,7 @@ export const ProductDetailModal: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5 text-[#c5a059]" />
                   <span className="text-xs font-medium text-[#f4efe6] tracking-wide">
-                    Complimentary Flacon Engraving
+                    Complimentary Bottle Engraving
                   </span>
                 </div>
                 <button
@@ -212,7 +212,7 @@ export const ProductDetailModal: React.FC = () => {
                     className="w-full bg-[#100e0c] border border-[#3b3125] rounded px-3 py-2 text-xs text-[#f5f0e8] placeholder-[#6e6354] uppercase tracking-widest focus:outline-none focus:border-[#c5a059]"
                   />
                   <p className="text-[10px] text-[#8a7c6b]">
-                    Delicately hand-engraved onto a warm golden brass crest fixed to your flacon.
+                    Delicately hand-engraved onto a warm golden brass crest fixed to your bottle.
                   </p>
                 </div>
               )}
@@ -235,14 +235,14 @@ export const ProductDetailModal: React.FC = () => {
                 {addedSuccess ? (
                   <>
                     <Check className="w-4 h-4 text-white" />
-                    <span>Added to Coffret</span>
+                    <span>Added to Bag</span>
                   </>
                 ) : selectedFragrance.stockQuantity === 0 ? (
                   <span>Out of Stock in Vault</span>
                 ) : (
                   <>
                     <ShoppingBag className="w-4 h-4" />
-                    <span>Place in Coffret · ₨ {price.toLocaleString()}</span>
+                    <span>Add to Bag · ₨ {price.toLocaleString()}</span>
                   </>
                 )}
               </button>

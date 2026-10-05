@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
 
             {/* Editorial Prose */}
             <p className="font-cormorant text-xl sm:text-2xl text-[#d4c8b8] leading-relaxed max-w-2xl font-light italic">
-              Distilled from aged Cambodian agarwood, dawn-picked Taif roses, and fossilized Baltic amber. Formulated at thirty-five percent perfume oil concentration for an eternal, magnetic sillage.
+              Distilled from aged Cambodian agarwood, dawn-picked Taif roses, and fossilized Baltic amber. Formulated at thirty-five percent perfume oil concentration for an eternal, magnetic fragrance trail.
             </p>
 
             {/* Primary Action Buttons */}
@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-[#f4efe6] font-medium font-cinzel">
                   <Droplet className="w-3.5 h-3.5 text-[#c5a059]" />
-                  <span>35% Pure Extrait</span>
+                  <span>35% Pure Perfume Extract</span>
                 </div>
                 <p className="text-[11px] text-[#7d7162]">Highest grade artisanal concentration</p>
               </div>
@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-[#f4efe6] font-medium font-cinzel">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#c5a059]" />
-                  <span>Secure Flacon Box</span>
+                  <span>Secure Gift Box</span>
                 </div>
                 <p className="text-[11px] text-[#7d7162]">Wax-sealed tamper-proof packaging</p>
               </div>
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-lg overflow-hidden bg-[#14120f] border border-[#3b3227] shadow-2xl">
                 <img
                   src={heroPerfumeImg}
-                  alt="Shahzein.A Parfumerie Flacon"
+                  alt="Shahzein.A Parfumerie Perfume Bottle"
                   referrerPolicy="no-referrer"
                   className="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition-transform duration-700"
                 />
@@ -123,7 +123,7 @@ export const Hero: React.FC = () => {
                       onClick={() => setSelectedFragrance(featuredFragrance)}
                       className="text-xs text-[#c5a059] hover:text-[#f4efe6] underline underline-offset-4 tracking-wider uppercase transition-colors cursor-pointer"
                     >
-                      Inspect Flacon &amp; Notes
+                      View Details &amp; Notes
                     </button>
                     <span className="text-[11px] text-[#7e7162]">
                       100ml / 3.4 FL. OZ. Extrait

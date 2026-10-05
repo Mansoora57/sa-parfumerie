@@ -82,7 +82,7 @@ export const CheckoutModal: React.FC = () => {
 
       const newOrder = addOrder({
         customer: {
-          fullName: formData.fullName || 'Maison Patron',
+          fullName: formData.fullName || 'Valued Customer',
           email: formData.email || 'client@shahzein.a-parfumerie.pk',
           phone: formData.phone || '+92 300 1234567',
           address: formData.address || 'Executive Residence',
@@ -111,8 +111,8 @@ export const CheckoutModal: React.FC = () => {
 
   const fulfillmentSteps = [
     { title: 'Order Confirmed', desc: 'Secure payment validated & logged on SHAHZEIN.A PARFUMERIE.PK' },
-    { title: 'Bespoke Maceration & Plaque Engraving', desc: 'Flacon hand-inspected by Master Nez' },
-    { title: 'Wax-Sealed in Vault', desc: 'Housed in signature black lacquer coffret with gold ribbon' },
+    { title: 'Custom Maturation & Plaque Engraving', desc: 'Bottle hand-inspected by Master Perfumer' },
+    { title: 'Wax-Sealed in Vault', desc: 'Housed in signature black lacquer luxury gift box with gold ribbon' },
     { title: 'Dispatched via Chauffeur / Courier', desc: 'En route with temperature-controlled white glove care' },
   ];
 
@@ -241,7 +241,7 @@ export const CheckoutModal: React.FC = () => {
 
               <div className="pt-4 flex justify-between items-center">
                 <div className="text-xs text-[#8c7e6f]">
-                  Coffret Value: <strong className="text-[#c5a059] font-mono tabular-nums">₨ {cartTotalPKR.toLocaleString()}</strong>
+                  Shopping Bag Value: <strong className="text-[#c5a059] font-mono tabular-nums">₨ {cartTotalPKR.toLocaleString()}</strong>
                 </div>
 
                 <button
@@ -264,7 +264,7 @@ export const CheckoutModal: React.FC = () => {
                   White Glove Delivery Experience
                 </h3>
                 <p className="text-xs text-[#9d8f7e] mt-1">
-                  Each flacon is secured in protective foam cushioning inside our wax-sealed black lacquer coffret.
+                  Each perfume bottle is secured in protective cushioning inside our wax-sealed black lacquer luxury gift box.
                 </p>
               </div>
 
@@ -278,7 +278,7 @@ export const CheckoutModal: React.FC = () => {
                   {
                     name: 'VIP Same-Day Chauffeur (Karachi / Lahore / Islamabad)',
                     badge: 'Complimentary for Orders > ₨ 20,000',
-                    desc: 'Hand-delivered by Maison Shahzein uniformed concierge within hours of bottling.',
+                    desc: 'Hand-delivered by Shahzein uniformed white-glove courier within hours of bottling.',
                   },
                 ].map((option) => (
                   <div
@@ -460,7 +460,7 @@ export const CheckoutModal: React.FC = () => {
                 <div className="p-4 bg-[#181511] border border-[#2e261e] rounded-lg space-y-2 animate-in fade-in text-xs text-[#b8ab99]">
                   <div className="text-sm font-semibold text-[#f4efe6]">Cash on Delivery Authorized</div>
                   <p>
-                    Pay in cash directly to our white glove courier upon physical delivery of your sealed coffret. You will receive an SMS confirmation code prior to dispatch.
+                    Pay in cash directly to our white glove courier upon physical delivery of your sealed luxury gift box. You will receive an SMS confirmation code prior to dispatch.
                   </p>
                 </div>
               )}
@@ -496,7 +496,7 @@ export const CheckoutModal: React.FC = () => {
                   Order Confirmed &amp; Sealed
                 </h3>
                 <p className="text-xs text-[#9d8f7e]">
-                  Your order reference <strong className="text-[#c5a059] font-mono">{confirmedOrder.orderNumber}</strong> has been registered in the Maison vault.
+                  Your order reference <strong className="text-[#c5a059] font-mono">{confirmedOrder.orderNumber}</strong> has been registered in the Shahzein order vault.
                 </p>
               </div>
 
@@ -504,7 +504,7 @@ export const CheckoutModal: React.FC = () => {
               <div className="p-5 bg-[#171410] border border-[#30261c] rounded-xl space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-cinzel uppercase tracking-wider text-[#c5a059] font-semibold">
-                    Real-Time Flacon Tracker
+                    Real-Time Order &amp; Bottle Tracker
                   </span>
                   <span className="text-[11px] font-mono text-[#a39482]">
                     Tracking: {confirmedOrder.trackingCode}
@@ -550,7 +550,7 @@ export const CheckoutModal: React.FC = () => {
               {/* Order Summary & Itemization */}
               <div className="p-4 bg-[#14120f] border border-[#282119] rounded-lg text-xs space-y-3">
                 <div className="flex justify-between border-b border-[#241d16] pb-2 font-medium text-[#c5baa8]">
-                  <span>Itemized Flacons</span>
+                  <span>Itemized Bottles</span>
                   <span>Amount</span>
                 </div>
 

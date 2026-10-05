@@ -48,7 +48,7 @@ export const CartDrawer: React.FC = () => {
           <div className="flex items-center gap-2">
             <ShoppingBag className="w-4 h-4 text-[#c5a059]" />
             <span className="font-cinzel text-sm tracking-[0.2em] uppercase text-[#f5f0e8] font-bold">
-              Your Coffret ({cart.length})
+              Your Shopping Bag ({cart.length})
             </span>
           </div>
           <button
@@ -64,9 +64,9 @@ export const CartDrawer: React.FC = () => {
           {cart.length === 0 ? (
             <div className="text-center py-16 space-y-3">
               <ShoppingBag className="w-10 h-10 text-[#473b2d] mx-auto" />
-              <p className="font-cinzel text-base text-[#cfc2b1]">Your coffret is vacant</p>
+              <p className="font-cinzel text-base text-[#cfc2b1]">Your shopping bag is empty</p>
               <p className="text-xs text-[#7e7160]">
-                Explore our private vault to discover your signature flacon.
+                Explore our private vault to discover your signature perfume.
               </p>
               <button
                 onClick={() => setIsCartOpen(false)}
@@ -188,7 +188,7 @@ export const CartDrawer: React.FC = () => {
               <div className="flex items-center gap-2.5 p-3 bg-[#15120f] border border-[#282119] rounded-lg text-xs text-[#9d8f7e]">
                 <Gift className="w-4 h-4 text-[#c5a059] shrink-0" />
                 <span className="text-[11px] leading-relaxed">
-                  Every flacon is housed in our signature black lacquer gift box, hand-tied with silk ribbon and sealed with wax.
+                  Every perfume bottle is housed in our signature black lacquer gift box, hand-tied with silk ribbon and sealed with wax.
                 </span>
               </div>
             </>

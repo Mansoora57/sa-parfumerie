@@ -280,7 +280,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const resetInventory = () => {
     setFragrances(INITIAL_FRAGRANCES);
     localStorage.removeItem('shahzein_fragrances');
-    showToast('Inventory reset to Maison Master Archive.');
+    showToast('Inventory reset to Master Archive.');
   };
 
   // Cart operations
@@ -322,7 +322,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       ];
     });
 
-    showToast(`Added ${fragrance.name} (${volume}) to your shopping coffret.`);
+    showToast(`Added ${fragrance.name} (${volume}) to your shopping bag.`);
     setIsCartOpen(true);
   };
 

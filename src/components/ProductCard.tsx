@@ -47,7 +47,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ fragrance }) => {
         <div className="absolute top-3 left-3">
           {fragrance.isBestseller && (
             <span className="text-[10px] tracking-[0.2em] uppercase text-[#c5a059] font-medium bg-[#0c0b0a]/80 backdrop-blur px-2 py-0.5 border border-[#3d3224]">
-              Maison Bestseller
+              House Bestseller
             </span>
           )}
           {!fragrance.isBestseller && fragrance.status === 'Low Stock' && (
