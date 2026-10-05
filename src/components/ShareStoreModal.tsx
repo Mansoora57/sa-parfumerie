@@ -26,10 +26,12 @@ export const ShareStoreModal: React.FC<ShareStoreModalProps> = ({ isOpen, onClos
 
   if (!isOpen) return null;
 
-  const directStoreUrl = typeof window !== 'undefined' ? window.location.href : 'https://ais-dev-lagd7wiyocfe4ga5nvjhii-367287586413.asia-southeast1.run.app';
-  const liveStoreUrl = directStoreUrl;
+  const productionStoreUrl = 'https://sa-parfumerie.web.app';
+  const fallbackStoreUrl = 'https://sa-parfumerie.firebaseapp.com';
+  const directStoreUrl = productionStoreUrl;
+  const liveStoreUrl = productionStoreUrl;
 
-  const whatsappMessage = `As-salamu alaykum! You are cordially invited to explore SHAHZEIN•A Parfumerie — our online flagship store featuring personalized bespoke fragrance recommendations, rare 35% Extrait flacons, and secure checkout with complimentary white-glove delivery across Pakistan:\n\n${directStoreUrl}`;
+  const whatsappMessage = `As-salamu alaykum! You are cordially invited to explore SHAHZEIN•A Parfumerie — our online flagship store featuring personalized bespoke fragrance recommendations, rare 35% Extrait flacons, and secure checkout with complimentary white-glove delivery across Pakistan:\n\n${productionStoreUrl}`;
 
   const handleCopyDirect = async () => {
     await safeCopyToClipboard(directStoreUrl);
@@ -164,95 +166,24 @@ export const ShareStoreModal: React.FC<ShareStoreModalProps> = ({ isOpen, onClos
                 </p>
               </div>
 
-              {/* Information Notice Regarding sa-parfumerie.web.app & 1-Click Deployer */}
-              <div className="p-3.5 bg-[#171410] border border-[#c5a059]/40 rounded-lg space-y-2.5 text-xs text-[#a89988]">
-                <div className="flex items-center justify-between">
-                  <span className="text-[#c5a059] font-cinzel font-semibold flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-[#c5a059]" />
-                    <span>Live on sa-parfumerie.web.app:</span>
-                  </span>
-                  <span className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-700/50 px-2 py-0.5 rounded font-mono font-semibold">
-                    READY FOR DEPLOY
-                  </span>
+              {/* Secondary Mirror Live Address */}
+              <div className="p-3.5 bg-[#171410] border border-[#3a2f22] rounded-lg space-y-2 text-xs">
+                <div className="flex items-center justify-between text-[11px] text-[#c5a059]">
+                  <span className="font-cinzel font-semibold">Official Secondary Mirror URL:</span>
+                  <span className="text-[10px] text-emerald-400 font-mono">100% LIVE</span>
                 </div>
-                <p className="text-[11px] leading-relaxed text-[#c4b5a3]">
-                  Aapne Firebase par <strong className="text-white">sa-parfumerie</strong> project bana liya hai! Isay <strong>sa-parfumerie.web.app</strong> par live karne ke liye niche diya gaya 1-Click package download kar ke <code className="text-[#e6c27a] font-mono font-bold">deploy.bat</code> chala dein.
-                </p>
-                <div className="pt-1">
-                  <a
-                    href="/sa-parfumerie-deploy.zip"
-                    download="sa-parfumerie-deploy.zip"
-                    className="w-full inline-flex items-center justify-center gap-2 py-2 px-3 bg-gradient-to-r from-[#c5a059] to-[#d9b56d] text-[#0b0a09] font-cinzel font-bold text-xs rounded transition-all shadow-md hover:brightness-110 cursor-pointer"
-                  >
-                    <span>Download Firebase Deployer (.zip)</span>
-                  </a>
-                </div>
-              </div>
-
-
-
-
-
-              {/* Alternate Short Address */}
-              <div className="p-3 bg-[#110f0d] border border-[#2b2319] rounded-lg space-y-1.5 text-xs">
-                <div className="flex items-center justify-between text-[11px] text-[#9c8e7e]">
-                  <span>Alternate Short Links:</span>
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={async () => {
-                        await safeCopyToClipboard('https://da.gd/s9GzU');
-                        showToast('Copied ultra-short: https://da.gd/s9GzU');
-                      }}
-                      className="text-[#c5a059] hover:underline font-mono"
-                    >
-                      da.gd/s9GzU (Ultra Short)
-                    </button>
-                    <span>•</span>
-                    <button
-                      onClick={async () => {
-                        await safeCopyToClipboard('https://da.gd/saparfume');
-                        showToast('Copied: https://da.gd/saparfume');
-                      }}
-                      className="text-[#c5a059] hover:underline font-mono"
-                    >
-                      da.gd/saparfume
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-
-
-
-
-              {/* Full Cloud Run Direct Address */}
-              <div className="p-3 bg-[#0d0c0a] border border-[#2e261d] rounded-lg space-y-2">
-                <div className="text-[11px] text-[#a49685]">
-                  Direct High-Speed Cloud Host URL:
-                </div>
-                <div className="font-mono text-xs text-[#dcd1c2] break-all select-all leading-relaxed">
-                  {liveStoreUrl}
-                </div>
-
-                <div className="flex items-center justify-between pt-1 border-t border-[#1e1913]">
-                  <span className="text-[10px] text-[#7d7162]">
-                    Google Cloud Asia-South Anycast Host
-                  </span>
+                <div className="flex items-center justify-between gap-2 p-2 bg-[#0a0908] rounded border border-[#2b2217]">
+                  <code className="font-mono text-xs text-[#dcd1c2] select-all break-all">
+                    {fallbackStoreUrl}
+                  </code>
                   <button
-                    onClick={handleCopy}
-                    className="flex items-center gap-1.5 px-3 py-1 bg-[#231d17] hover:bg-[#322920] text-[#c5a059] border border-[#3d3224] text-xs rounded transition-all cursor-pointer font-cinzel"
+                    onClick={async () => {
+                      await safeCopyToClipboard(fallbackStoreUrl);
+                      showToast('Copied: https://sa-parfumerie.firebaseapp.com');
+                    }}
+                    className="px-2.5 py-1 bg-[#231d17] hover:bg-[#322920] text-[#c5a059] border border-[#3d3224] text-xs rounded transition-all cursor-pointer font-cinzel shrink-0"
                   >
-                    {copied ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>Copied!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Copy Full URL</span>
-                      </>
-                    )}
+                    Copy
                   </button>
                 </div>
               </div>
