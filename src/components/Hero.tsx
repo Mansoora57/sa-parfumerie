@@ -2,6 +2,7 @@ import React from 'react';
 import { useStore } from '../context/StoreContext';
 import { Sparkles, ArrowRight, ShieldCheck, Compass, Droplet } from 'lucide-react';
 import heroPerfumeImg from '../assets/images/hero_luxury_perfume_1791027749457.jpg';
+import shahzeinLogoImg from '../assets/images/shahzein_hero_emblem_1791161552766.jpg';
 
 export const Hero: React.FC = () => {
   const { setIsFinderOpen, fragrances, setSelectedFragrance } = useStore();
@@ -17,12 +18,12 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Brand Story & CTAs */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Official Grand Maison Emblem & Brand Mark - Increased Size in Hero */}
+            {/* Official Grand Maison Emblem & Brand Mark */}
             <div className="pb-2 pt-1">
               <img
-                src="/images/shahzein-official-logo.svg?v=20261005"
+                src={shahzeinLogoImg}
                 alt="SHAHZEIN.A PARFUMERIE - BE REMEMBERED DIFFERENTLY"
-                className="h-44 sm:h-52 md:h-60 lg:h-68 w-auto object-contain filter drop-shadow-[0_12px_32px_rgba(0,0,0,0.95)] transition-transform duration-500 hover:scale-[1.02]"
+                className="h-36 sm:h-44 md:h-48 lg:h-52 w-auto max-w-full object-contain rounded-lg border border-[#c5a059]/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-transform duration-500 hover:scale-[1.02]"
                 loading="eager"
               />
             </div>
