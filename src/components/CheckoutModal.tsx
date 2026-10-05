@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { useStore } from '../context/StoreContext';
 import { CustomerOrder } from '../types';
 import {
+  getWhatsAppAlertUrl,
+  getSmsAlertUrl,
+  DEFAULT_ADMIN_PHONE_RAW,
+  DEFAULT_ADMIN_PHONE_INTL,
+} from '../utils/orderNotification';
+import {
   X,
   ShieldCheck,
   CreditCard,
@@ -15,6 +21,8 @@ import {
   FileText,
   MessageSquare,
   Sparkles,
+  Send,
+  BellRing,
 } from 'lucide-react';
 
 export const CheckoutModal: React.FC = () => {
@@ -577,6 +585,52 @@ export const CheckoutModal: React.FC = () => {
                   <span className="text-[#c5a059] font-mono tabular-nums">
                     ₨ {confirmedOrder.totalPKR.toLocaleString()}
                   </span>
+                </div>
+              </div>
+
+              {/* Owner Mobile Notification Alert (03173025999) */}
+              <div className="p-4 bg-gradient-to-r from-[#1c1710] to-[#14120e] border border-[#c5a059]/40 rounded-xl space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="p-1.5 rounded-full bg-[#c5a059]/20 text-[#c5a059]">
+                      <BellRing className="w-4 h-4 animate-bounce" />
+                    </span>
+                    <div>
+                      <h4 className="font-cinzel text-xs sm:text-sm font-bold text-[#f5f0e8]">
+                        Owner Mobile Notification Alert System
+                      </h4>
+                      <p className="text-[11px] text-[#9c8e7d]">
+                        Direct alert configured for: <strong className="text-[#c5a059] font-mono">{DEFAULT_ADMIN_PHONE_INTL} ({DEFAULT_ADMIN_PHONE_RAW})</strong>
+                      </p>
+                    </div>
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                    Live Dispatch Ready
+                  </span>
+                </div>
+
+                <p className="text-[11px] text-[#b3a492] leading-relaxed">
+                  The complete itemized receipt and customer delivery coordinates are formatted for instant delivery to your mobile phone.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-2 pt-1">
+                  <a
+                    href={getWhatsAppAlertUrl(confirmedOrder)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2.5 px-3 bg-emerald-700 hover:bg-emerald-600 text-white rounded text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-md"
+                  >
+                    <Send className="w-3.5 h-3.5" />
+                    <span>Send via WhatsApp (0317-3025999)</span>
+                  </a>
+
+                  <a
+                    href={getSmsAlertUrl(confirmedOrder)}
+                    className="flex-1 py-2.5 px-3 bg-[#241d16] hover:bg-[#32291f] text-[#c5a059] border border-[#3f3324] rounded text-xs font-semibold flex items-center justify-center gap-2 transition-all"
+                  >
+                    <Smartphone className="w-3.5 h-3.5" />
+                    <span>Send Direct SMS (0317-3025999)</span>
+                  </a>
                 </div>
               </div>
 

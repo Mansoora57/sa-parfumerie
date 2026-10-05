@@ -113,3 +113,13 @@ export interface ScentRecommendationResult {
     technique: string;
   };
 }
+
+export interface NotificationSettings {
+  adminPhone: string;
+  adminWhatsApp: string;
+  soundAlertEnabled: boolean;
+  browserPushEnabled: boolean;
+  autoOpenWhatsApp: boolean;
+  smsGatewayWebhookUrl?: string;
+  lastNotificationSent?: string;
+}

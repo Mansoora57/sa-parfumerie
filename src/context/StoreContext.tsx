@@ -1,6 +1,20 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Fragrance, CartItem, CustomerOrder, DomainSettings } from '../types';
+import { Fragrance, CartItem, CustomerOrder, DomainSettings, NotificationSettings } from '../types';
 import { INITIAL_FRAGRANCES, INITIAL_DOMAIN_SETTINGS } from '../data/initialFragrances';
+import { playLuxuryOrderChime } from '../utils/audioAlert';
+import {
+  DEFAULT_ADMIN_PHONE_RAW,
+  DEFAULT_ADMIN_WHATSAPP_NUMBER,
+  formatOrderAlertMessage,
+} from '../utils/orderNotification';
+
+const INITIAL_NOTIFICATION_SETTINGS: NotificationSettings = {
+  adminPhone: DEFAULT_ADMIN_PHONE_RAW,
+  adminWhatsApp: DEFAULT_ADMIN_WHATSAPP_NUMBER,
+  soundAlertEnabled: true,
+  browserPushEnabled: true,
+  autoOpenWhatsApp: false,
+};
 
 interface StoreContextType {
   // Products / Inventory
@@ -35,10 +49,13 @@ interface StoreContextType {
   activeView: 'store' | 'cms';
   setActiveView: (view: 'store' | 'cms') => void;
 
-  // Orders
+  // Orders & Notifications
   orders: CustomerOrder[];
   addOrder: (order: Omit<CustomerOrder, 'id' | 'orderNumber' | 'date'>) => CustomerOrder;
   updateOrderStatus: (orderId: string, status: CustomerOrder['fulfillmentStatus']) => void;
+  notificationSettings: NotificationSettings;
+  updateNotificationSettings: (settings: Partial<NotificationSettings>) => void;
+  testAdminNotification: () => void;
 
   // Domain & Hosting
   domainSettings: DomainSettings;
@@ -150,6 +167,18 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     return INITIAL_DOMAIN_SETTINGS;
   });
 
+  const [notificationSettings, setNotificationSettings] = useState<NotificationSettings>(() => {
+    const saved = localStorage.getItem('shahzein_notifications');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return INITIAL_NOTIFICATION_SETTINGS;
+      }
+    }
+    return INITIAL_NOTIFICATION_SETTINGS;
+  });
+
   const [selectedFragrance, setSelectedFragrance] = useState<Fragrance | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -213,6 +242,10 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, [orders]);
 
   useEffect(() => {
+    localStorage.setItem('shahzein_notifications', JSON.stringify(notificationSettings));
+  }, [notificationSettings]);
+
+  useEffect(() => {
     localStorage.setItem('shahzein_domain', JSON.stringify(domainSettings));
   }, [domainSettings]);
 
@@ -221,6 +254,18 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setTimeout(() => {
       setToastMessage(null);
     }, 3800);
+  };
+
+  const updateNotificationSettings = (newSettings: Partial<NotificationSettings>) => {
+    setNotificationSettings((prev) => ({ ...prev, ...newSettings }));
+    showToast('Admin mobile notification preferences saved.');
+  };
+
+  const testAdminNotification = () => {
+    if (notificationSettings.soundAlertEnabled) {
+      playLuxuryOrderChime();
+    }
+    showToast(`Test alert sent! Admin Mobile: ${notificationSettings.adminPhone}`);
   };
 
   const updateStock = (fragranceId: string, delta: number) => {
@@ -387,6 +432,28 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       updateStock(item.fragranceId, -item.quantity);
     });
 
+    // Play audio alert if enabled
+    if (notificationSettings.soundAlertEnabled) {
+      playLuxuryOrderChime();
+    }
+
+    // Trigger browser notification if supported and granted
+    if (
+      notificationSettings.browserPushEnabled &&
+      typeof window !== 'undefined' &&
+      'Notification' in window &&
+      Notification.permission === 'granted'
+    ) {
+      try {
+        new Notification('💎 New Perfume Order Received!', {
+          body: `Order #${newOrder.orderNumber} - ₨ ${newOrder.totalPKR.toLocaleString()} by ${newOrder.customer.fullName} (${newOrder.customer.city})`,
+          icon: '/favicon.png',
+        });
+      } catch {
+        // ignore notification error
+      }
+    }
+
     clearCart();
     return newOrder;
   };
@@ -450,6 +517,9 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         orders,
         addOrder,
         updateOrderStatus,
+        notificationSettings,
+        updateNotificationSettings,
+        testAdminNotification,
         domainSettings,
         updateDomainSettings,
         pingDomain,

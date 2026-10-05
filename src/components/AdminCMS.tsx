@@ -3,6 +3,14 @@ import { useStore } from '../context/StoreContext';
 import { Fragrance, CustomerOrder } from '../types';
 import { safeCopyToClipboard } from '../utils/clipboard';
 import {
+  getWhatsAppAlertUrl,
+  getSmsAlertUrl,
+  getCustomerWhatsAppUrl,
+  formatOrderAlertMessage,
+  DEFAULT_ADMIN_PHONE_RAW,
+  DEFAULT_ADMIN_PHONE_INTL,
+} from '../utils/orderNotification';
+import {
   Boxes,
   PackagePlus,
   Search,
@@ -21,6 +29,14 @@ import {
   Upload,
   ArrowUpRight,
   ShieldCheck,
+  BellRing,
+  Smartphone,
+  Send,
+  MessageCircle,
+  Volume2,
+  VolumeX,
+  CheckCircle2,
+  Sparkles,
 } from 'lucide-react';
 
 export const AdminCMS: React.FC = () => {
@@ -34,13 +50,16 @@ export const AdminCMS: React.FC = () => {
     resetInventory,
     orders,
     updateOrderStatus,
+    notificationSettings,
+    updateNotificationSettings,
+    testAdminNotification,
     domainSettings,
     setActiveView,
     setIsDomainModalOpen,
     showToast,
   } = useStore();
 
-  const [activeTab, setActiveTab] = useState<'inventory' | 'orders' | 'domain'>('inventory');
+  const [activeTab, setActiveTab] = useState<'inventory' | 'orders' | 'notifications' | 'domain'>('inventory');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCollection, setSelectedCollection] = useState<string>('all');
   const [editingFragrance, setEditingFragrance] = useState<Fragrance | null>(null);
@@ -205,10 +224,10 @@ export const AdminCMS: React.FC = () => {
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex border-b border-[#262018] gap-6 text-xs uppercase tracking-wider font-cinzel">
+        <div className="flex border-b border-[#262018] gap-6 text-xs uppercase tracking-wider font-cinzel overflow-x-auto">
           <button
             onClick={() => setActiveTab('inventory')}
-            className={`py-3 border-b-2 font-semibold transition-colors cursor-pointer ${
+            className={`py-3 border-b-2 font-semibold transition-colors cursor-pointer whitespace-nowrap ${
               activeTab === 'inventory'
                 ? 'border-[#c5a059] text-[#c5a059]'
                 : 'border-transparent text-[#8e8170] hover:text-[#f4efe6]'
@@ -219,7 +238,7 @@ export const AdminCMS: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('orders')}
-            className={`py-3 border-b-2 font-semibold transition-colors cursor-pointer ${
+            className={`py-3 border-b-2 font-semibold transition-colors cursor-pointer whitespace-nowrap ${
               activeTab === 'orders'
                 ? 'border-[#c5a059] text-[#c5a059]'
                 : 'border-transparent text-[#8e8170] hover:text-[#f4efe6]'
@@ -229,8 +248,20 @@ export const AdminCMS: React.FC = () => {
           </button>
 
           <button
+            onClick={() => setActiveTab('notifications')}
+            className={`py-3 border-b-2 font-semibold transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+              activeTab === 'notifications'
+                ? 'border-[#c5a059] text-[#c5a059]'
+                : 'border-transparent text-[#8e8170] hover:text-[#f4efe6]'
+            }`}
+          >
+            <BellRing className="w-3.5 h-3.5" />
+            <span>Mobile Alerts (0317-3025999)</span>
+          </button>
+
+          <button
             onClick={() => setActiveTab('domain')}
-            className={`py-3 border-b-2 font-semibold transition-colors cursor-pointer ${
+            className={`py-3 border-b-2 font-semibold transition-colors cursor-pointer whitespace-nowrap ${
               activeTab === 'domain'
                 ? 'border-[#c5a059] text-[#c5a059]'
                 : 'border-transparent text-[#8e8170] hover:text-[#f4efe6]'
@@ -459,12 +490,13 @@ export const AdminCMS: React.FC = () => {
                       <th className="py-3 px-4 font-semibold">Total (PKR)</th>
                       <th className="py-3 px-4 font-semibold">Payment</th>
                       <th className="py-3 px-4 font-semibold">Fulfillment Stage</th>
+                      <th className="py-3 px-4 font-semibold text-right">Mobile Alert (03173025999)</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#211a14] text-[#d4c7b6]">
                     {orders.length === 0 ? (
                       <tr>
-                        <td colSpan={7} className="py-12 text-center text-xs text-[#7d7162]">
+                        <td colSpan={8} className="py-12 text-center text-xs text-[#7d7162]">
                           No client orders recorded yet. Place an order in the boutique to test!
                         </td>
                       </tr>
@@ -530,6 +562,41 @@ export const AdminCMS: React.FC = () => {
                               <option value="Delivered">Delivered to Patron</option>
                             </select>
                           </td>
+
+                          {/* Mobile Alert Actions (03173025999) */}
+                          <td className="py-3 px-4 text-right">
+                            <div className="flex items-center justify-end gap-1.5">
+                              <a
+                                href={getWhatsAppAlertUrl(ord, notificationSettings.adminWhatsApp)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-2 py-1 bg-emerald-800 hover:bg-emerald-700 text-white rounded text-[11px] font-medium flex items-center gap-1 transition-colors"
+                                title="Send Order Alert to 0317-3025999 (WhatsApp)"
+                              >
+                                <Send className="w-3 h-3" />
+                                <span>WhatsApp</span>
+                              </a>
+
+                              <a
+                                href={getSmsAlertUrl(ord, notificationSettings.adminPhone)}
+                                className="px-2 py-1 bg-[#221c15] hover:bg-[#30281e] text-[#c5a059] border border-[#3f3323] rounded text-[11px] font-medium flex items-center gap-1 transition-colors"
+                                title="Send Direct SMS to 0317-3025999"
+                              >
+                                <Smartphone className="w-3 h-3" />
+                                <span>SMS</span>
+                              </a>
+
+                              <a
+                                href={getCustomerWhatsAppUrl(ord)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-1 bg-[#1a1612] hover:bg-[#27211a] text-[#8e8171] hover:text-[#f5f0e8] rounded transition-colors"
+                                title="Chat directly with customer on WhatsApp"
+                              >
+                                <MessageCircle className="w-3.5 h-3.5" />
+                              </a>
+                            </div>
+                          </td>
                         </tr>
                       ))
                     )}
@@ -540,7 +607,217 @@ export const AdminCMS: React.FC = () => {
           </div>
         )}
 
-        {/* TAB 3: DOMAIN & STORE SETTINGS */}
+        {/* TAB: NOTIFICATIONS & MOBILE ALERTS (03173025999) */}
+        {activeTab === 'notifications' && (
+          <div className="space-y-6">
+            {/* Primary Number Card */}
+            <div className="p-6 bg-[#14110e] border border-[#c5a059]/40 rounded-xl space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-[#c5a059]/20 border border-[#c5a059]/40 rounded-lg text-[#c5a059]">
+                    <BellRing className="w-6 h-6 animate-pulse" />
+                  </div>
+                  <div>
+                    <h3 className="font-cinzel text-lg font-bold text-[#f5f0e8] flex items-center gap-2">
+                      <span>Owner Order Alert Center</span>
+                      <span className="px-2 py-0.5 rounded text-[10px] font-sans font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                        Active &amp; Connected
+                      </span>
+                    </h3>
+                    <p className="text-xs text-[#9d8f7e]">
+                      Instant mobile order notification dispatch for owner: <strong className="text-[#c5a059] font-mono">{notificationSettings.adminPhone}</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={testAdminNotification}
+                    className="px-4 py-2 bg-[#c5a059] hover:bg-[#d9b56d] text-[#0b0a09] font-cinzel text-xs font-bold uppercase rounded transition-all cursor-pointer flex items-center gap-1.5 shadow-lg shadow-[#c5a059]/20"
+                  >
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Test Audio &amp; Alert</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Mobile Configuration Fields */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                <div className="p-4 bg-[#1b1712] border border-[#2d251d] rounded-lg space-y-2">
+                  <label className="text-xs text-[#c5baa8] font-semibold flex items-center gap-1.5">
+                    <Smartphone className="w-3.5 h-3.5 text-[#c5a059]" />
+                    <span>Primary Alert Mobile Number (Pakistan)</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={notificationSettings.adminPhone}
+                    onChange={(e) => updateNotificationSettings({ adminPhone: e.target.value })}
+                    className="w-full bg-[#0e0c0a] border border-[#3b3124] rounded px-3 py-2 text-sm font-mono text-[#f5f0e8] focus:border-[#c5a059] outline-none"
+                    placeholder="03173025999"
+                  />
+                  <p className="text-[10px] text-[#7d7162]">
+                    Used for native SMS receipts &amp; dispatch routes.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-[#1b1712] border border-[#2d251d] rounded-lg space-y-2">
+                  <label className="text-xs text-[#c5baa8] font-semibold flex items-center gap-1.5">
+                    <Send className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>WhatsApp Direct Gateway Number</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={notificationSettings.adminWhatsApp}
+                    onChange={(e) => updateNotificationSettings({ adminWhatsApp: e.target.value })}
+                    className="w-full bg-[#0e0c0a] border border-[#3b3124] rounded px-3 py-2 text-sm font-mono text-[#f5f0e8] focus:border-[#c5a059] outline-none"
+                    placeholder="923173025999"
+                  />
+                  <p className="text-[10px] text-[#7d7162]">
+                    International format (e.g. 923173025999 without plus sign) for instant wa.me dispatch.
+                  </p>
+                </div>
+              </div>
+
+              {/* Toggles */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                <div className="p-3.5 bg-[#1b1712] border border-[#2d251d] rounded-lg flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <div className="text-xs font-semibold text-[#f5f0e8] flex items-center gap-1.5">
+                      <Volume2 className="w-3.5 h-3.5 text-[#c5a059]" />
+                      <span>Luxury Audio Chime</span>
+                    </div>
+                    <div className="text-[10px] text-[#7d7162]">Plays boutique harp tone upon new order checkout</div>
+                  </div>
+                  <button
+                    onClick={() =>
+                      updateNotificationSettings({
+                        soundAlertEnabled: !notificationSettings.soundAlertEnabled,
+                      })
+                    }
+                    className={`px-3 py-1 text-xs font-semibold rounded transition-colors ${
+                      notificationSettings.soundAlertEnabled
+                        ? 'bg-emerald-600 text-white'
+                        : 'bg-[#2b241c] text-[#7d7162]'
+                    }`}
+                  >
+                    {notificationSettings.soundAlertEnabled ? 'Enabled' : 'Disabled'}
+                  </button>
+                </div>
+
+                <div className="p-3.5 bg-[#1b1712] border border-[#2d251d] rounded-lg flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <div className="text-xs font-semibold text-[#f5f0e8] flex items-center gap-1.5">
+                      <BellRing className="w-3.5 h-3.5 text-[#c5a059]" />
+                      <span>Browser Push Notifications</span>
+                    </div>
+                    <div className="text-[10px] text-[#7d7162]">Displays desktop/mobile browser notifications</div>
+                  </div>
+                  <button
+                    onClick={async () => {
+                      if (typeof window !== 'undefined' && 'Notification' in window) {
+                        const perm = await Notification.requestPermission();
+                        if (perm === 'granted') {
+                          updateNotificationSettings({ browserPushEnabled: true });
+                          showToast('Browser push notifications enabled!');
+                        } else {
+                          updateNotificationSettings({ browserPushEnabled: false });
+                          showToast('Notification permission denied in browser.');
+                        }
+                      } else {
+                        updateNotificationSettings({
+                          browserPushEnabled: !notificationSettings.browserPushEnabled,
+                        });
+                      }
+                    }}
+                    className={`px-3 py-1 text-xs font-semibold rounded transition-colors ${
+                      notificationSettings.browserPushEnabled
+                        ? 'bg-emerald-600 text-white'
+                        : 'bg-[#2b241c] text-[#7d7162]'
+                    }`}
+                  >
+                    {notificationSettings.browserPushEnabled ? 'Enabled' : 'Disabled'}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Live Message Formatting Preview */}
+            <div className="p-6 bg-[#14110e] border border-[#2d251d] rounded-xl space-y-3">
+              <div className="flex items-center justify-between">
+                <h4 className="font-cinzel text-sm font-bold text-[#f5f0e8] flex items-center gap-2">
+                  <span>Standard Order Alert Payload Preview (Sent to 03173025999)</span>
+                </h4>
+                <span className="text-[10px] text-[#7d7162] font-mono">Format: High-Luxury Markdown</span>
+              </div>
+
+              <div className="p-4 bg-[#0a0908] border border-[#251f18] rounded-lg font-mono text-xs text-[#c5baa8] whitespace-pre-wrap leading-relaxed">
+                {orders.length > 0
+                  ? formatOrderAlertMessage(orders[0])
+                  : `👑 *NEW PERFUME ORDER ALERT!*
+🏛️ *SHAHZEIN•A PARFUMERIE (ONLINE FLAGSHIP)*
+━━━━━━━━━━━━━━━━━━━━━
+📦 *Order ID:* SAP-8891-PK
+📅 *Date:* 2026-10-05 17:30
+
+👤 *PATRON / CUSTOMER:*
+• *Name:* Mansoor Ahmed
+• *Mobile:* 03173025999
+• *Email:* patron@shahzein.a-parfumerie.pk
+• *City:* Karachi
+• *Address:* Clifton Block 4, Karachi
+
+🛍️ *ORDERED ITEMS:*
+1. *Oud Royale* (100ml)
+   • Qty: 1 | Rate: ₨ 28,500
+   • 🖋️ Engraved: "M.A. 2026"
+
+💰 *PAYMENT & BILL:*
+• *Subtotal:* ₨ 28,500
+• *Delivery:* Complimentary Royal White Glove
+• *Grand Total:* *₨ 28,500*
+• *Method:* Cash on Delivery (COD)
+• *Status:* COD Authorized
+• *Tracking No:* TRK-558291-PK
+━━━━━━━━━━━━━━━━━━━━━
+✨ _Please verify and dispatch this order from the fragrance vault._`}
+              </div>
+
+              {orders.length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <a
+                    href={getWhatsAppAlertUrl(orders[0], notificationSettings.adminWhatsApp)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                  >
+                    <Send className="w-3.5 h-3.5" />
+                    <span>Send Latest Order to WhatsApp (03173025999)</span>
+                  </a>
+
+                  <a
+                    href={getSmsAlertUrl(orders[0], notificationSettings.adminPhone)}
+                    className="px-3.5 py-2 bg-[#221c16] hover:bg-[#30281f] text-[#c5a059] border border-[#3f3325] rounded text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                  >
+                    <Smartphone className="w-3.5 h-3.5" />
+                    <span>Send Latest Order via SMS (03173025999)</span>
+                  </a>
+
+                  <button
+                    onClick={async () => {
+                      await safeCopyToClipboard(formatOrderAlertMessage(orders[0]));
+                      showToast('Order notification payload copied to clipboard.');
+                    }}
+                    className="px-3 py-2 bg-[#191511] hover:bg-[#252019] text-[#b3a492] border border-[#2e261e] rounded text-xs transition-colors"
+                  >
+                    Copy Formatted Payload
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* TAB: DOMAIN & STORE SETTINGS */}
         {activeTab === 'domain' && (
           <div className="space-y-6">
             <div className="p-6 bg-[#14110e] border border-[#3b3227] rounded-xl space-y-4">
