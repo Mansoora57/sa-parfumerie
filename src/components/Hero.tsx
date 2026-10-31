@@ -2,7 +2,7 @@ import React from 'react';
 import { useStore } from '../context/StoreContext';
 import { Sparkles, ArrowRight, ShieldCheck, Compass, Droplet } from 'lucide-react';
 import heroPerfumeImg from '../assets/images/hero_luxury_perfume_1791027749457.jpg';
-import shahzeinLogoImg from '../assets/images/shahzein_luxury_emblem_v4.png';
+import shahzeinLogoImg from '../assets/images/shahzein_luxury_emblem_v5.png';
 
 export const Hero: React.FC = () => {
   const { setIsFinderOpen, fragrances, setSelectedFragrance } = useStore();
