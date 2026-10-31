@@ -2,7 +2,7 @@ import React from 'react';
 import { useStore } from '../context/StoreContext';
 import { Sparkles, ArrowRight, ShieldCheck, Compass, Droplet } from 'lucide-react';
 import heroPerfumeImg from '../assets/images/hero_luxury_perfume_1791027749457.jpg';
-import shahzeinLogoImg from '../assets/images/shahzein_main_logo_1793468280978.jpg';
+import shahzeinLogoImg from '../assets/images/shahzein_main_logo_transparent.png';
 
 export const Hero: React.FC = () => {
   const { setIsFinderOpen, fragrances, setSelectedFragrance } = useStore();
@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
               <img
                 src={shahzeinLogoImg}
                 alt="SHAHZEIN.A PARFUMERIE - BE REMEMBERED DIFFERENTLY"
-                className="h-36 sm:h-44 md:h-48 lg:h-52 w-auto max-w-full object-contain rounded-lg border border-[#c5a059]/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-transform duration-500 hover:scale-[1.02]"
+                className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto max-w-full object-contain transition-transform duration-500 hover:scale-[1.02] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]"
                 loading="eager"
               />
             </div>
