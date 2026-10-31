@@ -1,5 +1,5 @@
 import React from 'react';
-import shahzeinLogoImg from '../assets/images/shahzein_main_logo_transparent.png';
+import shahzeinLogoImg from '../assets/images/shahzein_luxury_emblem_v3.png';
 
 interface ShahzeinBrandLogoProps {
   size?: 'sm' | 'md' | 'lg';
