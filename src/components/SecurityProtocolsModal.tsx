@@ -50,7 +50,7 @@ export const SecurityProtocolsModal: React.FC<SecurityProtocolsModalProps> = ({ 
       title: 'Tamper-Evident Delivery & Handover Protocol',
       badge: 'Wax-Sealed Verification',
       icon: Truck,
-      desc: 'Every perfume bottle is sealed with the GS hot beeswax crest. Courier delivery requires SMS OTP verification from the client prior to handover, preventing theft or counterfeit substitution.',
+      desc: 'Every parfum bottle is sealed with the GS hot beeswax crest. Courier delivery requires SMS OTP verification from the client prior to handover, preventing theft or counterfeit substitution.',
       standard: 'High-Jewelry Security Freight Standard',
     },
     {

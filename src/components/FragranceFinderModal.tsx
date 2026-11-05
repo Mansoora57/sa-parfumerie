@@ -49,7 +49,7 @@ export const FragranceFinderModal: React.FC = () => {
     },
     {
       title: 'Primary Occasion & Setting',
-      subtitle: 'Where will your signature perfume accompany you most?',
+      subtitle: 'Where will your signature parfum accompany you most?',
       options: [
         { label: 'Royal Gala & Grand Celebrations', value: 'Royal Gala', desc: 'High-profile Pakistani weddings, evening receptions' },
         { label: 'Executive Boardroom & Leadership', value: 'Executive', desc: 'Crisp, authoritative, sophisticated, polished' },
@@ -90,7 +90,7 @@ export const FragranceFinderModal: React.FC = () => {
         const ai = new GoogleGenAI({ apiKey });
         const response = await ai.models.generateContent({
           model: 'gemini-2.5-flash',
-          contents: `You are the Master Perfumer at GS PARFUMERIE (address: GS PARFUMERIE.PK), an ultra-luxury perfume house based in Pakistan.
+          contents: `You are the Master Perfumer at GS PARFUMERIE (address: GS PARFUMERIE.PK), an ultra-luxury parfum house based in Pakistan.
 Provide a 2-3 sentence personalized fragrance recommendation for a client seeking:
 - Intensity: ${answers.intensity}
 - Preferred Family: ${answers.family}

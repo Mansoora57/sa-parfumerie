@@ -66,7 +66,7 @@ export const CartDrawer: React.FC = () => {
               <ShoppingBag className="w-10 h-10 text-[#473b2d] mx-auto" />
               <p className="font-cinzel text-base text-[#cfc2b1]">Your shopping bag is empty</p>
               <p className="text-xs text-[#7e7160]">
-                Explore our private vault to discover your signature perfume.
+                Explore our private vault to discover your signature parfum.
               </p>
               <button
                 onClick={() => setIsCartOpen(false)}
@@ -188,7 +188,7 @@ export const CartDrawer: React.FC = () => {
               <div className="flex items-center gap-2.5 p-3 bg-[#15120f] border border-[#282119] rounded-lg text-xs text-[#9d8f7e]">
                 <Gift className="w-4 h-4 text-[#c5a059] shrink-0" />
                 <span className="text-[11px] leading-relaxed">
-                  Every perfume bottle is housed in our signature black lacquer gift box, hand-tied with silk ribbon and sealed with wax.
+                  Every parfum bottle is housed in our signature black lacquer gift box, hand-tied with silk ribbon and sealed with wax.
                 </span>
               </div>
             </>

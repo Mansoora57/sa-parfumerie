@@ -31,7 +31,7 @@ export const INITIAL_FRAGRANCES: Fragrance[] = [
     olfactoryFamily: 'Oriental Oud',
     sillage: 'Monolithic',
     longevity: '18+ Hours on Skin',
-    description: 'The crowning jewel of our perfume house. Blended with distilled aged agarwood chips and rare Moroccan saffron, enveloped in golden ambergris. Formulated at 35% perfume oil concentration for unrivaled presence.',
+    description: 'The crowning jewel of our parfum house. Blended with distilled aged agarwood chips and rare Moroccan saffron, enveloped in golden ambergris. Formulated at 35% parfum oil concentration for unrivaled presence.',
     craftsmanshipNote: 'Macerated for 90 days in dark French oak casks before precision micro-filtration.',
     rating: 4.96,
     reviewsCount: 142,

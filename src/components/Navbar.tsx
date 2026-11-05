@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setSearchOpen(true)}
               className="p-2 text-[#9a8d7d] hover:text-[#c5a059]"
-              aria-label="Search perfumes"
+              aria-label="Search parfums"
             >
               <Search className="w-5 h-5" />
             </button>

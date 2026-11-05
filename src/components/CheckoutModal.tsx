@@ -272,7 +272,7 @@ export const CheckoutModal: React.FC = () => {
                   White Glove Delivery Experience
                 </h3>
                 <p className="text-xs text-[#9d8f7e] mt-1">
-                  Each perfume bottle is secured in protective cushioning inside our wax-sealed black lacquer luxury gift box.
+                  Each parfum bottle is secured in protective cushioning inside our wax-sealed black lacquer luxury gift box.
                 </p>
               </div>
 

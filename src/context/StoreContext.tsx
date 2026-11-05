@@ -445,7 +445,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       Notification.permission === 'granted'
     ) {
       try {
-        new Notification('💎 New Perfume Order Received!', {
+        new Notification('💎 New parfum Order Received!', {
           body: `Order #${newOrder.orderNumber} - ₨ ${newOrder.totalPKR.toLocaleString()} by ${newOrder.customer.fullName} (${newOrder.customer.city})`,
           icon: '/favicon.png',
         });

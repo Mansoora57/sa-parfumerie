@@ -17,7 +17,7 @@ export const formatOrderAlertMessage = (order: CustomerOrder): string => {
     )
     .join('\n');
 
-  return `👑 *NEW PERFUME ORDER ALERT!*
+  return `👑 *NEW parfum ORDER ALERT!*
 🏛️ *GS PARFUMERIE (ONLINE FLAGSHIP)*
 ━━━━━━━━━━━━━━━━━━━━━
 📦 *Order ID:* ${order.orderNumber}

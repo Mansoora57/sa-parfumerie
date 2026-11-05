@@ -11,7 +11,7 @@ export const Craftsmanship: React.FC = () => {
         {/* Editorial Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="flex items-center justify-center gap-2 text-xs tracking-[0.22em] uppercase text-[#c5a059] font-medium">
-            <span>Luxury Perfumery Craft</span>
+            <span>Luxury parfumerie Craft</span>
             <span aria-hidden="true">·</span>
             <span>House of GS</span>
           </div>
@@ -38,11 +38,11 @@ export const Craftsmanship: React.FC = () => {
             </div>
 
             <h3 className="font-cinzel text-xl font-semibold text-[#f5f0e8]">
-              35% Pure Perfume Extract
+              35% Pure parfum Extract
             </h3>
 
             <p className="text-xs text-[#a89b8a] leading-relaxed">
-              While conventional commercial perfumes dilute fragrances to ten or fifteen percent, our elixirs boast a saturated thirty-five percent concentration of pure botanical and resinous oils, ensuring a magnetic longevity exceeding eighteen hours on fabric and pulse points.
+              While conventional commercial parfums dilute fragrances to ten or fifteen percent, our elixirs boast a saturated thirty-five percent concentration of pure botanical and resinous oils, ensuring a magnetic longevity exceeding eighteen hours on fabric and pulse points.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export const Craftsmanship: React.FC = () => {
             </h3>
 
             <p className="text-xs text-[#a89b8a] leading-relaxed">
-              Make your perfume bottle an heirloom. Our artisans hand-inscribe your chosen initials or milestone date onto a warm golden plaque, permanently affixed to the bottle prior to its sealing in our black lacquer luxury presentation box.
+              Make your parfum bottle an heirloom. Our artisans hand-inscribe your chosen initials or milestone date onto a warm golden plaque, permanently affixed to the bottle prior to its sealing in our black lacquer luxury presentation box.
             </p>
           </div>
         </div>

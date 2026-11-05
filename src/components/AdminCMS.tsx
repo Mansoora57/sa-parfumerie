@@ -195,7 +195,7 @@ export const AdminCMS: React.FC = () => {
             <div className="font-mono text-2xl font-bold text-[#f5f0e8] tabular-nums">
               {totalStockUnits}
             </div>
-            <div className="text-[10px] text-[#786c5c]">Active Perfume Bottles</div>
+            <div className="text-[10px] text-[#786c5c]">Active parfum Bottles</div>
           </div>
 
           <div className="p-4 bg-[#14110e] border border-[#262017] rounded-lg space-y-1">
@@ -279,7 +279,7 @@ export const AdminCMS: React.FC = () => {
               <div className="relative flex-1 max-w-md">
                 <input
                   type="text"
-                  placeholder="Search by perfume, SKU, or batch..."
+                  placeholder="Search by parfum, SKU, or batch..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full bg-[#14110e] border border-[#2d251d] rounded px-3.5 py-2 text-xs text-[#f5f0e8] placeholder-[#7d7162] focus:border-[#c5a059] outline-none"
@@ -326,7 +326,7 @@ export const AdminCMS: React.FC = () => {
                 <table className="w-full text-left text-xs">
                   <thead className="bg-[#191511] border-b border-[#292119] text-[#9c8e7d] uppercase text-[10px] tracking-wider font-cinzel">
                     <tr>
-                      <th className="py-3 px-4 font-semibold">Perfume Bottle</th>
+                      <th className="py-3 px-4 font-semibold">parfum Bottle</th>
                       <th className="py-3 px-4 font-semibold">SKU &amp; Batch</th>
                       <th className="py-3 px-4 font-semibold">Collection</th>
                       <th className="py-3 px-4 font-semibold">Retail Price (PKR)</th>
@@ -753,7 +753,7 @@ export const AdminCMS: React.FC = () => {
               <div className="p-4 bg-[#0a0908] border border-[#251f18] rounded-lg font-mono text-xs text-[#c5baa8] whitespace-pre-wrap leading-relaxed">
                 {orders.length > 0
                   ? formatOrderAlertMessage(orders[0])
-                  : `👑 *NEW PERFUME ORDER ALERT!*
+                  : `👑 *NEW parfum ORDER ALERT!*
 🏛️ *GS PARFUMERIE (ONLINE FLAGSHIP)*
 ━━━━━━━━━━━━━━━━━━━━━
 📦 *Order ID:* SAP-8891-PK
@@ -1011,7 +1011,7 @@ export const AdminCMS: React.FC = () => {
             </button>
 
             <h3 className="font-cinzel text-lg font-bold text-[#f5f0e8] mb-4">
-              Add New Luxury Perfume to Vault
+              Add New Luxury parfum to Vault
             </h3>
 
             <form onSubmit={handleCreateProduct} className="space-y-4 text-xs">
@@ -1128,7 +1128,7 @@ export const AdminCMS: React.FC = () => {
                   type="submit"
                   className="px-5 py-2 bg-[#c5a059] hover:bg-[#d9b56d] text-[#0b0a09] font-cinzel font-bold uppercase rounded cursor-pointer"
                 >
-                  Save &amp; Publish Perfume
+                  Save &amp; Publish parfum
                 </button>
               </div>
             </form>
