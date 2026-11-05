@@ -6,7 +6,7 @@ import shahzeinLogoImg from '../assets/images/shahzein_pristine_logo.png';
 
 export const Hero: React.FC = () => {
   const { setIsFinderOpen, fragrances, setSelectedFragrance } = useStore();
-  const featuredFragrance = fragrances.find((f) => f.id === 'oud-shahzein-royale') || fragrances[0];
+  const featuredFragrance = fragrances.find((f) => f.id === 'oud-gs-royale') || fragrances[0];
 
   return (
     <section className="relative bg-[#0c0b0a] overflow-hidden border-b border-[#221e1a]">
@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
             <div className="pb-2 pt-1">
               <img
                 src={shahzeinLogoImg}
-                alt="SHAHZEIN.A PARFUMERIE - BE REMEMBERED DIFFERENTLY"
+                alt="GS PARFUMERIE - BE REMEMBERED DIFFERENTLY"
                 className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto max-w-full object-contain transition-transform duration-500 hover:scale-[1.02] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]"
                 loading="eager"
               />
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-lg overflow-hidden bg-[#14120f] border border-[#3b3227] shadow-2xl">
                 <img
                   src={heroPerfumeImg}
-                  alt="Shahzein.A Parfumerie Perfume Bottle"
+                  alt="GS PARFUMERIE Perfume Bottle"
                   referrerPolicy="no-referrer"
                   className="w-full aspect-[4/5] object-cover group-hover:scale-[1.02] transition-transform duration-700"
                 />

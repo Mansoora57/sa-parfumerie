@@ -13,7 +13,7 @@ export const Craftsmanship: React.FC = () => {
           <div className="flex items-center justify-center gap-2 text-xs tracking-[0.22em] uppercase text-[#c5a059] font-medium">
             <span>Luxury Perfumery Craft</span>
             <span aria-hidden="true">·</span>
-            <span>House of Shahzein</span>
+            <span>House of GS</span>
           </div>
 
           <h2 className="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#fbf9f5]">

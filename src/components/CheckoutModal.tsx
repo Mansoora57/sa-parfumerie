@@ -91,7 +91,7 @@ export const CheckoutModal: React.FC = () => {
       const newOrder = addOrder({
         customer: {
           fullName: formData.fullName || 'Valued Customer',
-          email: formData.email || 'client@shahzein.a-parfumerie.pk',
+          email: formData.email || 'client@gs-parfumerie.pk',
           phone: formData.phone || '+92 300 1234567',
           address: formData.address || 'Executive Residence',
           city: formData.city,
@@ -118,7 +118,7 @@ export const CheckoutModal: React.FC = () => {
   };
 
   const fulfillmentSteps = [
-    { title: 'Order Confirmed', desc: 'Secure payment validated & logged on SHAHZEIN.A PARFUMERIE.PK' },
+    { title: 'Order Confirmed', desc: 'Secure payment validated & logged on GS PARFUMERIE.PK' },
     { title: 'Custom Maturation & Plaque Engraving', desc: 'Bottle hand-inspected by Master Perfumer' },
     { title: 'Wax-Sealed in Vault', desc: 'Housed in signature black lacquer luxury gift box with gold ribbon' },
     { title: 'Dispatched via Chauffeur / Courier', desc: 'En route with temperature-controlled white glove care' },
@@ -200,7 +200,7 @@ export const CheckoutModal: React.FC = () => {
                   <input
                     type="email"
                     required
-                    placeholder="client@shahzein.a-parfumerie.pk"
+                    placeholder="client@gs-parfumerie.pk"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full bg-[#181511] border border-[#30271e] rounded px-3 py-2.5 text-xs text-[#f5f0e8] focus:border-[#c5a059] outline-none"
@@ -286,7 +286,7 @@ export const CheckoutModal: React.FC = () => {
                   {
                     name: 'VIP Same-Day Chauffeur (Karachi / Lahore / Islamabad)',
                     badge: 'Complimentary for Orders > ₨ 20,000',
-                    desc: 'Hand-delivered by Shahzein uniformed white-glove courier within hours of bottling.',
+                    desc: 'Hand-delivered by GS uniformed white-glove courier within hours of bottling.',
                   },
                 ].map((option) => (
                   <div
@@ -340,7 +340,7 @@ export const CheckoutModal: React.FC = () => {
                 </h3>
                 <div className="flex items-center gap-2 text-xs text-emerald-400 mt-1">
                   <ShieldCheck className="w-4 h-4" />
-                  <span>256-Bit Military Grade TLS Encryption Active on SHAHZEIN•A Parfumerie.pk</span>
+                  <span>256-Bit Military Grade TLS Encryption Active on GS PARFUMERIE.pk</span>
                 </div>
               </div>
 
@@ -437,13 +437,13 @@ export const CheckoutModal: React.FC = () => {
 
                   <div className="p-3 bg-[#0f0d0b] rounded border border-[#262018] text-xs space-y-1 text-[#b8ab99]">
                     <div>
-                      Raast ID: <strong className="text-[#f4efe6] font-mono">shahzein.pk@raast</strong>
+                      Raast ID: <strong className="text-[#f4efe6] font-mono">gs.pk@raast</strong>
                     </div>
                     <div>
                       Bank: <strong className="text-[#f4efe6]">Meezan Bank Ltd (Islamic Boutique Banking)</strong>
                     </div>
                     <div>
-                      Account Title: <strong className="text-[#f4efe6]">SHAHZEIN A PARFUMERIE PVT LTD</strong>
+                      Account Title: <strong className="text-[#f4efe6]">GS Parfumerie PVT LTD</strong>
                     </div>
                     <div>
                       IBAN: <strong className="text-[#f4efe6] font-mono">PK42MEZN0001020104829101</strong>
@@ -504,7 +504,7 @@ export const CheckoutModal: React.FC = () => {
                   Order Confirmed &amp; Sealed
                 </h3>
                 <p className="text-xs text-[#9d8f7e]">
-                  Your order reference <strong className="text-[#c5a059] font-mono">{confirmedOrder.orderNumber}</strong> has been registered in the Shahzein order vault.
+                  Your order reference <strong className="text-[#c5a059] font-mono">{confirmedOrder.orderNumber}</strong> has been registered in the GS order vault.
                 </p>
               </div>
 
@@ -638,7 +638,7 @@ export const CheckoutModal: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <button
                   type="button"
-                  onClick={() => showToast(`Receipt generated for order ${confirmedOrder.orderNumber}. Verified via SHAHZEIN•A Parfumerie.`)}
+                  onClick={() => showToast(`Receipt generated for order ${confirmedOrder.orderNumber}. Verified via GS PARFUMERIE.`)}
                   className="flex-1 py-3 px-4 bg-[#1e1914] hover:bg-[#2b241c] text-[#f4efe6] border border-[#3d3225] rounded text-xs font-cinzel uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-colors"
                 >
 

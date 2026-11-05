@@ -169,7 +169,7 @@ export const DomainHostingModal: React.FC = () => {
                   <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div className="space-y-1">
                     <h4 className="font-cinzel text-sm sm:text-base font-bold text-[#f5f0e8]">
-                      Why did Google/Chrome say "This site can't be reached" for https://shahzein.a-parfumerie.pk?
+                      Why did Google/Chrome say "This site can't be reached" for https://gs-parfumerie.pk?
                     </h4>
                     <p className="text-xs text-[#9d8f7e]">
                       Here are the 2 simple reasons and how custom domain mapping works:
@@ -208,7 +208,7 @@ export const DomainHostingModal: React.FC = () => {
                     <span>Important Note on Domain Dots &amp; Recommended PKNIC Names</span>
                   </div>
                   <p className="text-[#a49685] leading-relaxed text-[11px]">
-                    In internet naming rules, a dot signifies a subdomain. So <code className="text-[#f4efe6] font-mono">shahzein.a-parfumerie.pk</code> has two dots before <code className="text-[#f4efe6] font-mono">.pk</code>. For a cleaner, prestigious single-domain registration on PKNIC, we recommend registering one of these official Pakistani domains:
+                    In internet naming rules, a dot signifies a subdomain. So <code className="text-[#f4efe6] font-mono">gs-parfumerie.pk</code> has two dots before <code className="text-[#f4efe6] font-mono">.pk</code>. For a cleaner, prestigious single-domain registration on PKNIC, we recommend registering one of these official Pakistani domains:
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     {domainSettings.recommendedDomains.map((dm) => (
@@ -347,7 +347,7 @@ export const DomainHostingModal: React.FC = () => {
                       Register Domain on PKNIC or Registrar
                     </div>
                     <p className="text-[#a49685] text-[11px] leading-relaxed">
-                      Visit <a href="https://pknic.net.pk" target="_blank" rel="noopener noreferrer" className="text-[#c5a059] underline">pknic.net.pk</a> or any Pakistani registrar (e.g. Paknic, HosterPK, WebSouls) and register your desired domain name such as <strong className="text-[#f5f0e8]">shahzein-parfumerie.pk</strong> or <strong className="text-[#f5f0e8]">shahzeinparfumerie.pk</strong>.
+                      Visit <a href="https://pknic.net.pk" target="_blank" rel="noopener noreferrer" className="text-[#c5a059] underline">pknic.net.pk</a> or any Pakistani registrar (e.g. Paknic, HosterPK, WebSouls) and register your desired domain name such as <strong className="text-[#f5f0e8]">gs-parfumerie.pk</strong> or <strong className="text-[#f5f0e8]">gsparfumerie.pk</strong>.
                     </p>
                   </div>
                 </div>

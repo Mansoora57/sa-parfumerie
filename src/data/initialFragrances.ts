@@ -7,8 +7,8 @@ import heroLuxuryImg from '../assets/images/hero_luxury_perfume_1791027749457.jp
 
 export const INITIAL_FRAGRANCES: Fragrance[] = [
   {
-    id: 'oud-shahzein-royale',
-    name: 'Oud Shahzein Royale',
+    id: 'oud-gs-royale',
+    name: 'Oud GS Royale',
     frenchTitle: 'Oud Impérial & Ambre Rare',
     collection: 'Oud Royale',
     concentration: 'Extrait de Parfum',
@@ -199,9 +199,9 @@ export const INITIAL_FRAGRANCES: Fragrance[] = [
 ];
 
 export const INITIAL_DOMAIN_SETTINGS: DomainSettings = {
-  domainName: 'SHAHZEIN.A PARFUMERIE.PK',
-  subdomain: 'boutique.shahzein.a-parfumerie.pk',
-  liveAddress: 'https://shahzein.a-parfumerie.pk',
+  domainName: 'GS PARFUMERIE.PK',
+  subdomain: 'boutique.gs-parfumerie.pk',
+  liveAddress: 'https://gs-parfumerie.pk',
   cloudRunUrl: 'https://ais-pre-lagd7wiyocfe4ga5nvjhii-367287586413.asia-southeast1.run.app',
   hostingStatus: 'Active & Secured',
   sslProvider: 'Google Trust Cloud TLS 1.3 (Automated 90-Day Renewal)',
@@ -211,8 +211,8 @@ export const INITIAL_DOMAIN_SETTINGS: DomainSettings = {
   lastPingMs: 24,
   lastVerified: 'Active on Google Cloud Run · Ready for PKNIC DNS Pointing',
   recommendedDomains: [
-    'shahzein-parfumerie.pk',
-    'shahzeinparfumerie.pk',
+    'gs-parfumerie.pk',
+    'gsparfumerie.pk',
     'shahzein.pk',
     'shahzeinparfumerie.com.pk',
   ],

@@ -19,7 +19,7 @@ export const CartDrawer: React.FC = () => {
   ]);
 
   const sampleOptions = [
-    'Oud Shahzein Royale 2ml',
+    'Oud GS Royale 2ml',
     'Rose Nocturne de Taif 2ml',
     'Amber Sultani Privé 2ml',
     'Bergamote Impériale 2ml',
@@ -224,7 +224,7 @@ export const CartDrawer: React.FC = () => {
             </button>
 
             <div className="text-center text-[10px] text-[#6d6152] font-mono">
-              256-bit TLS Encrypted · Verified on SHAHZEIN.A PARFUMERIE.PK
+              256-bit TLS Encrypted · Verified on GS PARFUMERIE.PK
             </div>
           </div>
         )}

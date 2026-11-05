@@ -18,7 +18,7 @@ export const ShahzeinBrandLogo: React.FC<ShahzeinBrandLogoProps> = ({ size = 'md
     <div className={`flex items-center justify-center select-none ${className}`}>
       <img
         src={shahzeinLogoImg}
-        alt="SHAHZEIN.A PARFUMERIE - BE REMEMBERED DIFFERENTLY"
+        alt="GS PARFUMERIE - BE REMEMBERED DIFFERENTLY"
         className={`${heights[size]} w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.03] drop-shadow-[0_4px_14px_rgba(0,0,0,0.6)]`}
         loading="eager"
       />

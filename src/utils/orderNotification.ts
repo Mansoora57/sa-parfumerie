@@ -18,7 +18,7 @@ export const formatOrderAlertMessage = (order: CustomerOrder): string => {
     .join('\n');
 
   return `👑 *NEW PERFUME ORDER ALERT!*
-🏛️ *SHAHZEIN•A PARFUMERIE (ONLINE FLAGSHIP)*
+🏛️ *GS PARFUMERIE (ONLINE FLAGSHIP)*
 ━━━━━━━━━━━━━━━━━━━━━
 📦 *Order ID:* ${order.orderNumber}
 📅 *Date:* ${order.date}
@@ -80,6 +80,6 @@ export const getCustomerWhatsAppUrl = (order: CustomerOrder): string => {
     formatted = '92' + formatted;
   }
 
-  const text = `Assalam-o-Alaikum ${order.customer.fullName},\n\nThank you for choosing *SHAHZEIN•A PARFUMERIE*.\n\nYour order *${order.orderNumber}* for *₨ ${order.totalPKR.toLocaleString()}* has been confirmed and is being hand-bottled & wax-sealed in our fragrance vault.\n\n📦 *Tracking Code:* ${order.trackingCode}\n🚚 *Delivery:* Complimentary Royal White Glove Courier\n\nFor any bespoke requests, feel free to message us here!\n\nWarm regards,\n*SHAHZEIN•A PARFUMERIE Flagship*`;
+  const text = `Assalam-o-Alaikum ${order.customer.fullName},\n\nThank you for choosing *GS PARFUMERIE*.\n\nYour order *${order.orderNumber}* for *₨ ${order.totalPKR.toLocaleString()}* has been confirmed and is being hand-bottled & wax-sealed in our fragrance vault.\n\n📦 *Tracking Code:* ${order.trackingCode}\n🚚 *Delivery:* Complimentary Royal White Glove Courier\n\nFor any bespoke requests, feel free to message us here!\n\nWarm regards,\n*GS PARFUMERIE Flagship*`;
   return `https://api.whatsapp.com/send?phone=${formatted}&text=${encodeURIComponent(text)}`;
 };

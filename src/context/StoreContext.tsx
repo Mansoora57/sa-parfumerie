@@ -133,7 +133,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         },
         items: [
           {
-            fragranceId: 'oud-shahzein-royale',
+            fragranceId: 'oud-gs-royale',
             fragrance: INITIAL_FRAGRANCES[0],
             selectedVolume: '100ml',
             pricePKR: 28500,

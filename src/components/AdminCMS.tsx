@@ -152,11 +152,11 @@ export const AdminCMS: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] tracking-[0.25em] uppercase text-[#c5a059] font-cinzel font-semibold">
-                Shahzein Central Management Portal
+                GS Central Management Portal
               </span>
               <span className="text-[10px] text-[#716556]">·</span>
               <span className="text-[10px] text-emerald-400 font-mono">
-                HOSTED ON SHAHZEIN.A PARFUMERIE.PK
+                HOSTED ON GS PARFUMERIE.PK
               </span>
             </div>
 
@@ -754,7 +754,7 @@ export const AdminCMS: React.FC = () => {
                 {orders.length > 0
                   ? formatOrderAlertMessage(orders[0])
                   : `👑 *NEW PERFUME ORDER ALERT!*
-🏛️ *SHAHZEIN•A PARFUMERIE (ONLINE FLAGSHIP)*
+🏛️ *GS PARFUMERIE (ONLINE FLAGSHIP)*
 ━━━━━━━━━━━━━━━━━━━━━
 📦 *Order ID:* SAP-8891-PK
 📅 *Date:* 2026-10-05 17:30
@@ -762,7 +762,7 @@ export const AdminCMS: React.FC = () => {
 👤 *PATRON / CUSTOMER:*
 • *Name:* Mansoor Ahmed
 • *Mobile:* 03173025999
-• *Email:* patron@shahzein.a-parfumerie.pk
+• *Email:* patron@gs-parfumerie.pk
 • *City:* Karachi
 • *Address:* Clifton Block 4, Karachi
 

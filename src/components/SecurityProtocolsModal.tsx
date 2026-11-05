@@ -26,7 +26,7 @@ export const SecurityProtocolsModal: React.FC<SecurityProtocolsModalProps> = ({ 
       title: 'Transport Layer Security (TLS 1.3 Strict)',
       badge: 'Active & Enforced',
       icon: Lock,
-      desc: 'All communications between clients and SHAHZEIN•A Parfumerie.pk are encrypted using 256-bit AES-GCM ciphers with automated forward secrecy and HSTS (HTTP Strict Transport Security) enabled.',
+      desc: 'All communications between clients and GS PARFUMERIE.pk are encrypted using 256-bit AES-GCM ciphers with automated forward secrecy and HSTS (HTTP Strict Transport Security) enabled.',
       standard: 'ISO/IEC 27001 & NIST SP 800-52r2',
     },
     {
@@ -42,7 +42,7 @@ export const SecurityProtocolsModal: React.FC<SecurityProtocolsModalProps> = ({ 
       title: 'State Bank of Pakistan (SBP) Raast Protocol',
       badge: 'Central Bank Authorized',
       icon: Building,
-      desc: 'Compliant with the State Bank of Pakistan National Payment Systems framework for instantaneous, direct account-to-account settlement via official Raast ID (shahzein.pk@raast).',
+      desc: 'Compliant with the State Bank of Pakistan National Payment Systems framework for instantaneous, direct account-to-account settlement via official Raast ID (gs.pk@raast).',
       standard: 'SBP National Payment Framework',
     },
     {
@@ -50,7 +50,7 @@ export const SecurityProtocolsModal: React.FC<SecurityProtocolsModalProps> = ({ 
       title: 'Tamper-Evident Delivery & Handover Protocol',
       badge: 'Wax-Sealed Verification',
       icon: Truck,
-      desc: 'Every perfume bottle is sealed with the Shahzein hot beeswax crest. Courier delivery requires SMS OTP verification from the client prior to handover, preventing theft or counterfeit substitution.',
+      desc: 'Every perfume bottle is sealed with the GS hot beeswax crest. Courier delivery requires SMS OTP verification from the client prior to handover, preventing theft or counterfeit substitution.',
       standard: 'High-Jewelry Security Freight Standard',
     },
     {
@@ -83,7 +83,7 @@ export const SecurityProtocolsModal: React.FC<SecurityProtocolsModalProps> = ({ 
                 E-Commerce Security &amp; Compliance Protocols
               </h3>
               <p className="text-xs text-[#8e8171]">
-                Verified infrastructure for <strong className="text-[#c5a059]">SHAHZEIN•A Parfumerie.pk</strong>
+                Verified infrastructure for <strong className="text-[#c5a059]">GS PARFUMERIE.pk</strong>
               </p>
             </div>
           </div>
@@ -145,7 +145,7 @@ export const SecurityProtocolsModal: React.FC<SecurityProtocolsModalProps> = ({ 
 
         {/* Footer */}
         <div className="p-4 bg-[#0e0c0a] border-t border-[#221c16] flex items-center justify-between text-[11px] text-[#7d7162]">
-          <span className="font-mono">Security Certificate Verified: SHAHZEIN•A Parfumerie.pk</span>
+          <span className="font-mono">Security Certificate Verified: GS PARFUMERIE.pk</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 bg-[#c5a059] hover:bg-[#d9b56d] text-[#0b0a09] font-cinzel text-xs font-bold uppercase rounded transition-colors"

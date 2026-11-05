@@ -38,13 +38,13 @@ export const Footer: React.FC = () => {
             className="cursor-default select-none transition-opacity hover:opacity-80"
             title="Maison Official Copyright"
           >
-            © 2026 SHAHZEIN•A PARFUMERIE.PK (PVT) LTD. ALL RIGHTS RESERVED.
+            © 2026 GS PARFUMERIE.PK (PVT) LTD. ALL RIGHTS RESERVED.
           </div>
 
           <div className="flex items-center gap-3">
             <span>Handcrafted in Pakistan &amp; France</span>
             <span>·</span>
-            <span>SHAHZEIN•A Parfumerie.pk</span>
+            <span>GS PARFUMERIE.pk</span>
           </div>
         </div>
       </div>

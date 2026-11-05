@@ -90,7 +90,7 @@ export const FragranceFinderModal: React.FC = () => {
         const ai = new GoogleGenAI({ apiKey });
         const response = await ai.models.generateContent({
           model: 'gemini-2.5-flash',
-          contents: `You are the Master Perfumer at SHAHZEIN.A PARFUMERIE (address: SHAHZEIN.A PARFUMERIE.PK), an ultra-luxury perfume house based in Pakistan.
+          contents: `You are the Master Perfumer at GS PARFUMERIE (address: GS PARFUMERIE.PK), an ultra-luxury perfume house based in Pakistan.
 Provide a 2-3 sentence personalized fragrance recommendation for a client seeking:
 - Intensity: ${answers.intensity}
 - Preferred Family: ${answers.family}
@@ -102,7 +102,7 @@ Recommend specifically our creation "${topMatch.name}" (${topMatch.concentration
       } else {
         // High luxury fallback
         setAiNote(
-          `"For ${answers.occasion.toLowerCase()}, ${topMatch.name} creates an arresting presence. Its ${topMatch.heartNotes[0]} accords harmonize flawlessly with your desire for ${answers.intensity.toLowerCase()} projection. We recommend anointing your pulse points and collar with two delicate spritzes." — Master Perfumer, Shahzein.A Parfumerie`
+          `"For ${answers.occasion.toLowerCase()}, ${topMatch.name} creates an arresting presence. Its ${topMatch.heartNotes[0]} accords harmonize flawlessly with your desire for ${answers.intensity.toLowerCase()} projection. We recommend anointing your pulse points and collar with two delicate spritzes." — Master Perfumer, GS PARFUMERIE`
         );
       }
     } catch {
